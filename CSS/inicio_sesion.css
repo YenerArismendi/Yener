@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+}
+
+body{
+  /*  background: url(/IMAGENES/fondo_inico_sesion.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;*/
+    background: linear-gradient(#a9ddee, width);
+    background-color: #35363A;
+}
+
+.encabezado{
+    position: absolute;
+    border-bottom: 3px solid white;
+    width: 100%;
+    height: 15%;
+    background-color: #a9ddee;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: 200%;
+}
+
+.logo{
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid blue;
+    height: 10%;
+    width: 5.5%;
+    top: 2%;
+    left: 3%;
+    font-weight: 200;
+}
+
+h1 {
+    color: #000;
+    font-size: 250%;
+    text-align: center;
+}
+
+.contenedor{
+    position: absolute;
+    border: 2px ;
+    top: -7%;
+    left: 50%;
+    height: 60%;
+    width: 25%;
+    transform: translate(-50%, 50%);
+    /*background-color: #021b2f;*/
+    border-radius: 5px;
+    /*border: 1px solid #01ffc1;*/
+    backdrop-filter: blur(20px);
+   /* border: 1px solid #DA06BA;*/
+    background: linear-gradient(#a9ddee, width);
+    background-color: #1F1F1F;
+    box-shadow: 0px 0px 20px 7px #000;
+    
+}
+
+.complemento{
+    position: relative;
+    border-bottom: 2px solid blue;
+    width: 80%;
+    height: 8%;
+    background-color: #a9ddee;
+}
+
+/*.nombre, .contraseña{
+    position: relative;
+    top: 30%;
+    left: 30%;
+}*/
+
+.subti{
+    position: absolute;
+    top: 6%;
+    left: 20%;
+    font-size: 5vh;
+    text-align: center;
+    color: white;
+}
+
+/*.bot{
+    position: absolute;
+    top: 70%;
+    left: 60%;
+}*/
+
+input{
+    width: 90%;
+    margin-bottom: 20px;
+    position: relative;
+    top: 30%;
+    left: 3%;
+}
+
+.recuperacion{
+    position: absolute;
+    top: 75%;
+    left: 27%;
+    
+}
+
+.regresar{
+    position: absolute;
+    top: 85%;
+    left: 41%;
+    
+}
+
+input[type="text"], input[type="password"]{
+    border: none;
+    border-bottom: 1px solid ;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+
+input[type="submit"]{
+    position: relative;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 80%;
+    color: #000;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: #a9ddee;
+    left: 10%;
+    top: 30%;
+}
+
+a{
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 20px;
+    color: white;
+}
+
+a:hover{
+    color: red;
+}
+
+.icono-usuario{
+    position: absolute;
+    width: 7%;
+    height: 7%;
+    top: 30%;
+    left: 85%;    
+    color: white;
+}
+
+.icono-contraseña{
+    position: absolute;
+    width: 7%;
+    height: 7%;
+    left: 85%;
+    top: 41%;
+    color: white;
+}
+
+.regis{
+    position: absolute;
+    top: 80%;
+    left: 39%;
+}
+
+.alerta{
+    color: white;
+}

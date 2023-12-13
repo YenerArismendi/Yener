@@ -1,0 +1,332 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.fondo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .6;    
+}
+
+h1{
+    font-family: cambria bold;
+    color: #4ea93b;
+    font-size: 600%;
+    position: absolute;
+    top: 20%;
+    left: 42%;
+}
+
+.Inicio{
+    position: absolute;
+    border: 1px solid black;
+    width: 200px;
+    left: 1000px;
+    top: 80px;
+}
+
+.registro, .inicio{
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid green;
+}
+
+.conoce{
+    /*border: 1px solid black;*/
+    position: absolute;
+    width: 55%;
+    left: 24%;
+    top: 50%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.racimo, .fruto{
+    margin-left: 50px;
+}
+
+.palma,.racimo,.fruto{
+    border-radius: 50%;
+    height: 80%;
+    width: 34%;
+    border: 4px solid #eef3ad;
+}
+
+
+.texto{
+    position: absolute;
+    top: 700px;
+    left: 100px;
+    border: 2px solid black;
+}
+
+.mision{
+    top: 0px;
+    left: 250px;
+    width: 300px;
+    height: 300px;
+    font-size: 22px;
+}
+
+.vision{
+    top: 0px;
+    left: 650px;
+    width: 300px;
+    height: 300px;
+    font-size: 22px;
+}
+
+.m, .v{
+    color: #fff;
+    position: relative;
+    
+}
+
+/*menu responsive*/
+
+nav{
+    background: #a9ddee;
+    height: 100px;
+    width: 100%;
+    border-bottom: 3px blue solid;
+}
+
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+}
+
+.logo{
+    height: 40px;
+    top: 10px;
+    height: 65px;
+    border-radius: 50%;
+    border: 0.5px blue solid;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 10px 5px;
+}
+
+nav ul li a{
+    color: #fff;
+    font-size: 100%;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+li a.active, li a:hover{
+    background: #0da9dd;
+    transition: .5s;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+/*redes sociales */
+
+:root{
+    --facebook: blue;
+    --instagram: red;
+    --twitter: #55acee;
+    --whatsapp: green;
+    --map: #e66c1b;
+}
+
+.redes-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 335%;
+    /*border: 2px solid black;*/
+    width: 100%;
+    background-color: #a9ddee;
+    height: 20%;
+    border-top: 3px blue solid;
+}
+
+.redes{
+    position: absolute;
+    left: 40%;
+}
+
+.redes-container ul li{
+    display: inline-block;
+    margin: 0 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.redes-container ul li a{
+    display: block;
+    padding: 0 10px;
+    background-color: #333;
+    color: #fff;
+    line-height: 50px;
+    font-size: 100%;
+    box-shadow: 0 3px 5px 0px rgb(0, 0, 0, .2);
+}
+
+.redes-container ul:hover a{
+    filter: blur(2px);
+}
+
+.redes-container ul li a:hover{
+    transform: translate(-3px) scale(1.05);
+    box-shadow: 0 5px 0px rgb(0, 0, 0, .4);
+    filter: none;
+}
+
+.redes-container ul li .facebook:hover{
+    background: var(--facebook);
+}
+
+.redes-container ul li .instagram:hover{
+    background: var(--instagram);
+}
+
+.redes-container ul li .whatsapp:hover{
+    background: var(--whatsapp);
+}
+
+.redes-container ul li .twitter:hover{
+    background: var(--twitter);
+}
+
+.redes-container ul li .map:hover{
+    background: var(--map);
+}
+
+/*informacion*/
+
+.info1{
+    border: 2px solid black;
+    position: absolute;
+    width: 30%;
+    height: 20%;
+    top: 10%;
+    left: 10%;
+}
+
+.container-info{
+   /* border: 2px solid black;*/
+    position: absolute;
+    top: 102%;
+    left: 0%;
+    height: 250%;
+    width: 100%;
+}
+
+.info{
+   /* border: 2px solid black;*/
+    height: 40%;
+    width: 100%;
+    background-color: #c4e5c9;
+}
+
+h3{
+    position: absolute;
+    left: 45%;
+    top: 10%;
+}
+
+.contenido{
+    position: absolute;
+    left: 45%;
+    top: 13%;
+    font-size: 110%;
+}
+
+/*OFRECE*/
+
+.ofrece{
+    position: absolute;
+    top: 40%;
+    left: 0%;
+   /* border: 1px solid red;*/
+    width: 100%;
+    height: 60%;
+    background-color: #cccccc;
+}
+
+.img-registro, .img-busqueda, .img-reporte, .img-estado, .img-nube, .img-entrada{
+    width: 50%;
+    height: 50%;
+    border: 2px solid black;
+    position: relative;
+    top: 10%;
+    left: 25%;
+}
+
+.entrada, .registroP, .busqueda, .reporte, .estado-producto, .nube{
+    border: 2px solid black;
+    width: 30%;
+    height: 30%;
+    margin-left: 1%;
+    background-color: #c4e5c9;
+}
+
+.entrada, .registroP, .busqueda{
+    display: inline-block;
+    position: relative;
+    left: 3%;
+    top: 50%;
+    border-radius: 10px;
+}
+
+.reporte, .estado-producto, .nube{
+    display: inline-block;
+    position: relative;
+    left: 3%;
+    top: -15%;
+    border-radius: 10px;
+}
+
+h4{
+    position: relative;
+    text-align: center;
+    top: 20%;
+    border: 2px solid black;
+    width: 80%;
+    left: 12%;
+    border-radius: 10px;
+    background-color: white;
+}
+
+h2{
+    position: absolute;
+    border: 2px solid black;
+    top: 5%;
+    left: 33%;
+    border-radius: 10px;
+    width: 38%;
+    text-align: center;
+    background-color: white;
+}

@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'Cambria';
+  src: url(../fonts/Cambria.ttf);
+}
+
+@font-face {
+  font-family: 'Courier';
+  src: url(../fonts/Courier.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {  
+  font-family: 'Cambria';
+}
+
+body {
+  background-image: url(../imagenes/palma.jpg);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.form-register {
+  width: 450px;
+  background:#ddb606;
+  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 15px;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+.form-register div.form {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center
+}
+
+.form-register div h4 {
+  font-family: 'Cambria';
+  font-size: 40px;
+}
+
+.form-register div input {
+  background: transparent;
+
+  width: 300px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 10px;
+  transition: .5s;
+
+  color: white;
+
+  font-family: 'Courier';
+}
+
+.form-register div input:hover {
+  border: 2px solid white;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.boton {
+  border: 0;
+  background: linear-gradient(
+    150deg,
+    rgb(20, 155, 15),
+    rgb(222, 110, 12),
+    #c5d836
+  ); 
+  border-radius: 8px;
+  color: white;
+  display: flex;
+
+  font-size: 18px;
+  font-family: 'Cambria';
+  padding: 4px;
+  margin: 4px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.boton span {
+  background-color: #111;
+  padding: 12px 20px;
+  border-radius: 6px;
+  transition: .3s;
+}
+
+.boton:hover span {
+  background: none;
+}
+
+.boton:active {
+  transform: scale(0.9);
+}
+
+.terminos {
+  display: flex;
+
+  margin: 10px;
+
+  font-family: 'Cambria';
+}
+
+#terminosYCondiciones {
+  width: 20px;
+}

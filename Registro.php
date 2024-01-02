@@ -23,16 +23,17 @@
     ?> 
        <div class="formularios">
         <form action="" method= "POST" class= "formulario">
-            <input type="text" name="nombre" placeholder="Nombre Completo"><br>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo"><br>
             <input type="email" name="correo" placeholder="E-mail"><br>
             <input type="text" name="usuario" placeholder="Nombre de usuario"><br>
             <input type="password" name="contraseña" placeholder="Contraseña"><br>
             <input type="password" name="contraseña2" placeholder="Confirmar Contraseña"><br>
-            <label for="roles">roles</label><br>
+            <label for="roles">rol:</label>
             <select name="roles" id="roles" >
                 <option value="administrador">Administrador</option>
                 <option value="usuario">Usuario</option>
             </select><br>
+
             <input type="submit" name="registrar" placeholder="Registrar"><br>
            
             <div class="ingresar">

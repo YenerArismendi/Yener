@@ -1,5 +1,7 @@
 <?php
 
+//codigo para realizar el registro de los usuarios en la base de datos 
+
 include 'conexion.php';
 
 if(!empty($_POST["registrar"])){

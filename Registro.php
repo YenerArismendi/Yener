@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
     <link rel="stylesheet" href="CSS/Registrar.css">
+    <link rel="stylesheet" href="sweetalert/dist/sweetalert2.css">
+    <link rel="stylesheet" href="sweetalert/dist/sweetalert2.nim">
+    <script src="sweetalert/dist/sweetaler2.all.js"></script>
+    <script src="sweetalert/dist/sweetaler2.all.min.js"></script>
+    <script src="sweetalert/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="encabezado">
@@ -46,4 +51,5 @@
      
     </div>
 </body>
+     
 </html> 

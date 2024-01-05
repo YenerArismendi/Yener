@@ -131,6 +131,10 @@ a:hover{
     color: red;
 }
 
+/*alerta de php*/
+.alerta{
+    position: absolute;
+}
 @media screen and (min-width: 1200px){
 
     .encabezado{

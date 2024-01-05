@@ -6,7 +6,11 @@ include 'conexion.php';
 
 if(!empty($_POST["registrar"])){
     if(empty($_POST["nombre"]) or empty($_POST["correo"]) or empty($_POST["usuario"]) or empty($_POST["contraseña"]) or empty($_POST["contraseña2"])){
-        echo '<script>Swal.fire("Éxito", "Usuario registrado correctamente", "success");</script>';
+        echo'<script>Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Ingrese todos los datos solicitados!",
+          });</script>';
         
     }else{
 
@@ -18,14 +22,48 @@ if(!empty($_POST["registrar"])){
             $correo=$_POST["correo"];
             $usuario=$_POST["usuario"];
             $roles=$_POST["roles"];
-            $sql=$conexionsql->query("insert into registro(nombre,correo, usuario, contraseña,confirmar_contraseña, rol)values('$nombre', '$correo', '$usuario', '$contraseña', '$contraseña2', '$roles' )");
-            if($sql == 1){
-                echo '<p class="registro">Usuario registrado correctamente</p>';
+
+            //consulta de usuario para verificar si ya esta en la bd
+
+            $consultacorreo = $conexionsql->query("SELECT * FROM registro WHERE correo = '$correo'");
+            
+            if($consultacorreo->num_rows > 0){
+                echo '<script>Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "el correo electronico ingresado, ya se encuentra en uso, elija otro correo",
+                  });</script>';
             }else{
-                echo '<p class="alerta">Usuario no registrado</p>';
-            } 
+                $consultausuario = $conexionsql->query("SELECT * FROM registro WHERE usuario = '$usuario'");
+
+                if($consultausuario->num_rows > 0){
+                    echo '<script>Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "El usuario ingresado ya esta en uso, ingrese otro usurio",
+                      });</script>';
+                }else{
+
+                    $sql=$conexionsql->query("insert into registro(nombre,correo, usuario, contraseña,confirmar_contraseña, rol)values('$nombre', '$correo', '$usuario', '$contraseña', '$contraseña2', '$roles' )");
+
+                         if($sql == 1){
+                         echo '<script>Swal.fire("Usuario guardado <br> exitosamente!");</script>';
+
+                        }else{
+                            echo '<script>Swal.fire({
+                                icon: "error",
+                                text: "Usuario no registrado",
+                            });</script>';
+                        } 
+                }
+            }
+
+            
         }else{
-            echo '<h4 class="alerta">las contraseñas no coinciden</h4>';    
+            echo '<script>Swal.fire({
+                icon: "error",
+                text: "las contraseñas no coinciden",
+              });</script>';
         }
        
     }

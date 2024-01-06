@@ -58,7 +58,6 @@ if(!empty($_POST["registrar"])){
                 }
             }
 
-            
         }else{
             echo '<script>Swal.fire({
                 icon: "error",

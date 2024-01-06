@@ -27,7 +27,7 @@
     
     ?> 
        <div class="formularios">
-        <form action="" method= "POST" class= "formulario">
+        <form  action="" method= "POST" class= "formulario">
             <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo"><br>
             <input type="email" name="correo" placeholder="E-mail"><br>
             <input type="text" name="usuario" placeholder="Nombre de usuario"><br>

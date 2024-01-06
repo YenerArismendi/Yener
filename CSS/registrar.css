@@ -91,6 +91,20 @@ input[type="submit"]{
     margin-top: 5%;
 }
 
+
+/*forma de aplicar estilos para cuando se realiza el autocompletado del input*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #1f1f1f inset;
+  border-bottom: 1px solid #fff;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #fff;
+    
+  }
+
 select{
     border: none;
     text-align: center;

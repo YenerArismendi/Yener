@@ -15,6 +15,7 @@ body{
     width: 220.6vh;
     background-color: #a9ddee;
 }
+
 h1{
     text-align: center;
     font-size: 11vh;
@@ -54,8 +55,6 @@ h1{
     background-color: #1F1F1f;
     box-shadow: 0px 0px 20px 7px #000;
 }
-
-
 
 /*estilos para los formularios*/
 

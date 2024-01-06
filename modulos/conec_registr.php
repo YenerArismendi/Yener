@@ -44,7 +44,10 @@ if(!empty($_POST["registrar"])){
                       });</script>';
                 }else{
 
-                    $sql=$conexionsql->query("insert into registro(nombre,correo, usuario, contraseña,confirmar_contraseña, rol)values('$nombre', '$correo', '$usuario', '$contraseña', '$contraseña2', '$roles' )");
+                    //encriptación de contraseña para mayor seguridad   
+                    $has_contraseña= password_hash($contraseña, PASSWORD_BCRYPT);
+
+                    $sql=$conexionsql->query("insert into registro(nombre,correo, usuario, contraseña,confirmar_contraseña, rol)values('$nombre', '$correo', '$usuario', '$has_contraseña', '$has_contraseña', '$roles' )");
 
                          if($sql == 1){
                          echo '<script>Swal.fire("Usuario guardado <br> exitosamente!");</script>';

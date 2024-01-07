@@ -4,7 +4,7 @@
     font-family: serif;
 }
 
-body{
+html{
     background-color: #35363A;
 }
 
@@ -18,8 +18,9 @@ body{
 
 h1{
     text-align: center;
-    font-size: 11vh;
-    margin-top: 1%;
+    font-size: 11vh !important;
+    margin-top: 1% !important;
+    font-weight: bold !important;
 }
 
 .registro{
@@ -29,6 +30,7 @@ h1{
     text-align: center;
     font-size: 7vh;
     color: white;
+    font-weight: bold ;
 }
 .logo{
     position: absolute;
@@ -76,18 +78,10 @@ input[type="text"], input[type="password"], input[type="email"]{
 /*estilos boton de envio de registro*/
 
 input[type="submit"]{
-    border: none;
-    outline: none;
-    height: 30px;
+    height: 12%;
     width: 30%;
-    color: #000;
-    font-size: 1.4vw;
-    border-radius: 20px;
-    background-color: #a9ddee;
-    left: 2%;
     top: 4%;
     position: relative;
-    margin-top: 5%;
 }
 
 
@@ -102,7 +96,7 @@ input:-webkit-autofill:focus {
 input:-webkit-autofill {
     -webkit-text-fill-color: #fff;
     
-  }
+}
 
 select{
     border: none;
@@ -133,15 +127,21 @@ option{
 
 p{
     color: white;
+    position: relative;
+    font-size: 2.5vh;
 }
 
 a{
-    color: white;
-    text-decoration: none;
+    position: absolute;
+    color: #28a739 !important;
+    text-decoration: none !important;
+    margin-top: -14%;
+    left: 23%;
+    font-size: 2.5  vh;
 }
 
 a:hover{
-    color: red;
+    color: red !important;
 }
 
 /*alerta de php*/

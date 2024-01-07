@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="CSS/Registrar.css">
-    <!--<link rel="stylesheet" href="sweetalert/dist/sweetalert2.css">
-    <link rel="stylesheet" href="sweetalert/dist/sweetalert2.nim.css">-->
+    <link rel="stylesheet" href="CSS/registrar.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <script src="sweetalert/dist/sweetalert2.all.js"></script>
     <script src="sweetalert/dist/sweetalert2.all.min.js"></script>
     <script src="sweetalert/jquery-3.6.0.min.js"></script>
-</head>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 <body>
     <div class="encabezado">
         <h1>Palm Oil</h1>
@@ -39,7 +38,7 @@
                 <option value="usuario">Usuario</option>
             </select><br>
 
-            <input type="submit" name="registrar" placeholder="Registrar"><br>
+            <input class="btn btn-success" type="submit" name="registrar" value="Registrar"><br>
            
             <div class="ingresar">
             <p class="cuenta">Ya tienes cuenta?</p>
@@ -51,5 +50,6 @@
      
     </div>
 </body>
-     
+
+</head>
 </html> 

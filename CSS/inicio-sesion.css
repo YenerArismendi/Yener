@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: serif;
+    font-family: serif !important;
 }
 
 html{
@@ -28,16 +28,18 @@ html{
 
 h1{
     text-align: center;
-    font-size: 11vh;
-    margin-top: 1%;
+    font-size: 11vh !important;
+    margin-top: 1% !important;
+    font-weight: bold !important;
 }
 
 .inicio{
     position: absolute;
     top: 25%;
-    left: 43.5%;
+    left: 42.5%;
     color: #fff;
-    
+    font-size: 6vh;
+    font-weight: bold;
 }
 
 .contenedor{
@@ -51,10 +53,10 @@ h1{
     border-radius: 5%;
     box-shadow: 0px 0px 20px 7px #000;
     display: flex;
+    justify-content: center;
 }
 
 .formulario{
-    border: 1px solid #fff;
     margin-top: 8%;
     height: 80%;
     width: 80%;
@@ -67,9 +69,9 @@ input[type="text"], input[type="password"]{
     border-bottom: 1px solid;
     background: transparent;
     outline: none; 
-    width: 80%;
+    width: 100%;
     margin-top: 5%;
-    margin-left: 8%;
+   /* margin-left: 8%;*/
     color: #fff;
 }
 
@@ -80,10 +82,57 @@ input:-webkit-autofill:focus{
     border-bottom: 1px solid #fff;
 }
 
-input:-webkit-autfill{
-    -webkit-tex-fill-color: #fff;
+input:-webkit-autofill {
+    -webkit-text-fill-color: #fff;
+    
 }
 
+input[type="submit"]{
+    height: 34px;
+    width: 28%;
+    top: 4%;
+    position: relative;
+    margin-top: 5%;
+}
+
+/*estilos para iconos de bootstrap*/
+
+.icono-usuario, .icono-contraseña{
+
+    position: absolute;
+    color: #fff;
+    top: 22%;
+    left: 80%;
+}
+
+.icono-contraseña{
+    margin-top: 12%;
+}
+
+/*estilos para botones*/
+#boton{
+    position: relative;
+    height: auto;
+    width: 48%;
+}
+
+#registro{
+    width: 58%;
+    height: 10%;
+}
+
+.recuperar{
+    position: absolute;
+    top: 70%;
+    left: 22%;
+}
+
+.regis{
+    position: absolute;
+    top: 50.1%;
+    left: 52%;
+    width:65%;
+}
 @media screen and (min-width: 1200px){
 
     .encabezado{

@@ -56,7 +56,7 @@ if(!empty($_POST["registrar"])){
                             echo '<script>Swal.fire({
                                 icon: "error",
                                 text: "Usuario no registrado",
-                            });</script>';
+                            });</script>';  
                         } 
                 }
             }

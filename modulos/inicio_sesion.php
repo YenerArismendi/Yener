@@ -1,4 +1,3 @@
-
 <?php
 
 session_start();
@@ -19,27 +18,42 @@ if (isset($_POST['usuario']) && isset($_POST['contraseña'])) {
     $contraseña = validar($_POST['contraseña']);
 
     if (empty($usuario)){
-        header('location: ../inicio_sesion.php');
-        echo'<script>Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Ingrese el usuario!",
-          });</script>';
+        header('location: ../inicio_sesion.php?error=ingrese el usuario!');
         exit();
     }elseif (empty($contraseña)){
-         echo'<script>Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "El usuario ingresado ya esta en uso, ingrese otro usurio",
-          });</script>';
-          header('location: ../inicio_sesion.php');
-          exit();
+        header('location: ../inicio_sesion.php?error=ingrese la contraseña!');
+        exit();
+    }else{
+        $sql = "SELECT * FROM registro WHERE usuario = '$usuario'";
+        $query = mysqli_query($conexionsql, $sql);
+
+        if($query->num_rows==1){
+            $usuarioq = $query->fetch_assoc();
+
+            $id = $usuarioq['ID_registro'];
+            $nombreUsuario = $usuarioq['usuario'];
+            $clave = $usuarioq['contraseña'];
+            $nombreIngresado = $usuarioq['nombre'];
+
+            if($usuario === $nombreUsuario){
+                if(password_verify($contraseña, $clave)){
+                    $_SESSION['ID_registro'] = $id;
+                    $_SESSION['usuario'] = $nombreUsuario;
+                    $_SESSION['nombre'] = $nombreIngresado;
+
+                    echo "<script>Swal.fire('Bienvenido $nombreIngresado');
+                        location.href = '../home.php'   
+                    </script>";
+
+                }else{
+                    header('location:../inicio_sesion.php?error=Usuario o contraseña erronea');
+                }
+            }else{
+                header('location:../inicio_sesion.php?error=Usuario o contraseña erronea');
+            }
+        }else{
+            header('location:../inicio_sesion.php?error=Usuario o contraseña erronea');
+        }
     }
 }
-
-
-?>
-
- 
-           
-       
+?>   

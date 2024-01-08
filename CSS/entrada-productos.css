@@ -1,37 +1,34 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
-h1{
-    position: absolute;
-    border: 1px solid black;
+h1 {
+  position: absolute;
+  border: 1px solid black;
 }
 
-.nombre{
-    position: absolute;
-    border: 2px solid red;
-    width: 100%;
-    height: 15%;
+.nombre {
+  position: absolute;
+  border: 2px solid red;
+  width: 100%;
+  height: 15%;
 }
 
-.opciones{
-    position: absolute;
-    border: 2px solid black;
-    width: 20%;
-    height: 85%;
-    top: 15%;
+.opciones {
+  position: absolute;
+  border: 2px solid black;
+  width: 20%;
+  height: 85%;
+  top: 15%;
 }
 
-.container-opciones{
-    position: absolute;
-    border: 2px solid blue;
-    top: 10px;
-    left: 50px;
-    list-style: none;
+.container-opciones {
+  position: absolute;
+  border: 2px solid blue;
+  top: 10px;
+  left: 50px;
+  list-style: none;
 }
-
-
-

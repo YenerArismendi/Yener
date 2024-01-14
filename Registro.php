@@ -42,7 +42,7 @@
            
             <div class="ingresar">
             <p class="cuenta">Ya tienes cuenta?</p>
-            <a href="/inicio_sesion.html">Ingresar</a>
+            <a href="inicio_sesion.php">Ingresar</a>
         </div>  
         </div>
           

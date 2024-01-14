@@ -10,7 +10,7 @@ if(!empty($_POST["registrar"])){
             icon: "error",
             title: "Error",
             text: "Ingrese todos los datos solicitados!",
-          });</script>';
+            });</script>';
         
     }else{
 
@@ -32,7 +32,7 @@ if(!empty($_POST["registrar"])){
                     icon: "error",
                     title: "Error",
                     text: "el correo electronico ingresado, ya se encuentra en uso, elija otro correo",
-                  });</script>';
+                    });</script>';
             }else{
                 $consultausuario = $conexionsql->query("SELECT * FROM registro WHERE usuario = '$usuario'");
 
@@ -41,7 +41,7 @@ if(!empty($_POST["registrar"])){
                         icon: "error",
                         title: "Error",
                         text: "El usuario ingresado ya esta en uso, ingrese otro usurio",
-                      });</script>';
+                        });</script>';
                 }else{
 
                     //encriptación de contraseña para mayor seguridad   
@@ -65,7 +65,7 @@ if(!empty($_POST["registrar"])){
             echo '<script>Swal.fire({
                 icon: "error",
                 text: "las contraseñas no coinciden",
-              });</script>';
+                });</script>';
         }
        
     }

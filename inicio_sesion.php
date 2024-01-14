@@ -13,14 +13,10 @@
     
 </head>
 <body>
-
-    <?php
-    
-    include_once "modulos/inicio_sesion.php";
-    include_once "modulos/conexion.php";
-    
+<?php
+    include_once ('modulos/conexion.php');
+    include_once ('modulos/inicio_sesion.php');
     ?>
-
     <div class="encabezado">
         <h1>Palm Oil</h1>
     </div>
@@ -29,13 +25,8 @@
     </div>
 
     <h2 class="inicio">Iniciar Sesion</h2>
-
     <div class="contenedor">
-        <form class="formulario" action="modulos/inicio_sesion.php" method= "POST">
-            <?php if(isset($_GET['error'])) {?>
-                <p><?php echo'<script>alert("' . $_GET['error'] . '");</script>';?></p>
-            <?php } ?>
-
+        <form class="formulario" method= "POST">
         <svg class="icono-usuario" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
         </svg><br>
@@ -60,5 +51,4 @@
     </div>
     <div class="comprobacion"></div>
 </body>
-    
 </html> 

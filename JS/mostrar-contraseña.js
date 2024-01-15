@@ -4,7 +4,8 @@ function togglePasswordVisibility(){
 
     if(contraseña.type === 'password'){
         contraseña.type = 'text';
-
+        icono.classList.remove('')
+        icono.classList.add('bi-eye');
     }else{
         contraseña.type = 'password';
     }

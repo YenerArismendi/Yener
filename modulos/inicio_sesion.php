@@ -21,11 +21,11 @@ if(!empty($_POST["ingresar"])){
         $result = $conexionsql->query($query);
 
         if($result->num_rows == 1){
-            //validacion de contraseña
-
-            $row = $result->fetch_assoc();
+            $row = $result->fetch_assoc();   
+            $_SESSION["id"]=$row["ID_registro"];
+            $_SESSION["nombre"]=$row["nombre"];
             $hasalmacenado = $row["contraseña"];
-            
+
             //verificacion de contraseña con el has de la bd para redireccionar al home 
             if(password_verify($contraseña, $hasalmacenado)){
                 header("location: home.php");
@@ -46,6 +46,4 @@ if(!empty($_POST["ingresar"])){
 
     }
 }
-
-$conexionsql->close();
 ?>

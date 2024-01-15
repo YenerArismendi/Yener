@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    if(isset($_SESSION['ID_registro']) && isset($_SESSION['usuario'])){
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +11,4 @@
     <a href="modulos/cerrarSesion.php">Cerrar sesion</a>
 </body>
 </html>
-
-<?php }else{
-    header('location:../inicio_sesion.php');
-}
-
 ?>

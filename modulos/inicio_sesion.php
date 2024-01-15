@@ -1,6 +1,6 @@
 <?php 
 
-include_once "conexion.php";
+session_start();
 
 //Verificación de que el usuario lleno los campos
 if(!empty($_POST["ingresar"])){
@@ -10,33 +10,42 @@ if(!empty($_POST["ingresar"])){
             title: "Error",
             text: "Ingrese todos los datos solicitados!",
             });</script>';
-    }else
+    }else{
+        //Alamacenar datos de inicio de sesion
 
-    $usuario= $_POST["usuario"];
-    $contraseña= $_POST["contraseña"];
-    $sql= $conexionsql->query("SELECT * FROM registro WHERE usuario= '$usuario' ");
-    $sql->bind_param("s", $usuario);
-    $sql->execute();
-    $resultado = $sql->get_result();
+        $usuario = $_POST['usuario'];
+        $contraseña = $_POST['contraseña'];
 
-    if($resultado->num_rows > 0){
-        $datos=$resultado->fetch_object();
+        //Validar usuario en bd
+        $query= "SELECT * FROM registro WHERE usuario = '$usuario'";
+        $result = $conexionsql->query($query);
 
-        if (password_verify($contraseña, $datos->contraseña)){
-            header("location: ../home.php");
-        } else{
-            echo'<script>Swal.fire({
+        if($result->num_rows == 1){
+            //validacion de contraseña
+
+            $row = $result->fetch_assoc();
+            $hasalmacenado = $row["contraseña"];
+            
+            //verificacion de contraseña con el has de la bd para redireccionar al home 
+            if(password_verify($contraseña, $hasalmacenado)){
+                header("location: home.php");
+            }else{
+                echo '<script>Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "La contraseña ingresada es erronea!",
+                    });</script>';
+            }
+        }else{
+            echo '<script>Swal.fire({
                 icon: "error",
                 title: "Error",
-                text: "La contraseña es incorrecta!",
+                text: "El usuario ingresado no existe!",
                 });</script>';
-        }   
+        }
+
     }
-    } else {
-        echo'<script>Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "El usuario ingresado no existe!",
-            });</script>'; 
-    }
+}
+
+$conexionsql->close();
 ?>

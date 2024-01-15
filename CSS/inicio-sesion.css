@@ -71,7 +71,7 @@ input[type="text"], input[type="password"]{
     outline: none; 
     width: 100%;
     margin-top: 5%;
-   /* margin-left: 8%;*/
+    /* margin-left: 8%;*/
     color: #fff;
 }
 
@@ -97,7 +97,7 @@ input[type="submit"]{
 
 /*estilos para iconos de bootstrap*/
 
-.icono-usuario, .icono-contraseña{
+.icono-usuario, .bi{
 
     position: absolute;
     color: #fff;
@@ -105,8 +105,9 @@ input[type="submit"]{
     left: 80%;
 }
 
-.icono-contraseña{
+.bi{
     margin-top: 12%;
+    cursor: pointer;
 }
 
 /*estilos para botones*/

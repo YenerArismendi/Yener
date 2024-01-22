@@ -10,59 +10,28 @@ html{
 
 .encabezado{
     position: absolute;
-    /* border: 1px solid black;*/
-    height: 22%;
-    width: 220.6vh;
     background-color: #0a8005;
     box-shadow: 0px 0px 20px 5px #cacaca;
 }
 
-.logo{
-    position: absolute;
-    /*display: flex;*/
-    height: 15%;
-    width: 1%;
-    margin-top: 0.90%;
-    margin-left: 1.5%;
-    border-radius: 50%;
-}
 
 h1{
     color: #fff;
     text-align: center;
-    font-size: 11vh !important;
-    margin-top: 1% !important;
-    font-weight: bold !important;
 }
 
 .inicio{
     position: absolute;
-    top: 25%;
-    left: 42.5%;
     color: #000;
-    font-size: 6vh;
-    font-weight: bold;
 }
 
 .contenedor{
     position: absolute;
-    border: 2px solid #73f58d;
-    top: 37%;
-    left: 37%;
-    width: 25%;
-    height: 50%;
     background-color: #fff;
     border-radius: 5%;
     box-shadow: 0px 0px 20px 7px #cacaca;
     display: flex;
     justify-content: center;
-    font-size: 3vh
-}
-
-.formulario{
-    margin-top: 8%;
-    height: 80%;
-    width: 80%;
 }
 
 /*Estilos para formularios*/
@@ -72,9 +41,6 @@ input[type="text"], input[type="password"]{
     border-bottom: 1px solid #767676;
     background: transparent;
     outline: none; 
-    width: 100%;
-    margin-top: 5%;
-    /* margin-left: 8%;*/
     color: #000;
 }
 
@@ -123,8 +89,9 @@ input[type="submit"]{
 }
 
 #registro{
+    position: relative;
     width: 58%;
-    height: 10%;
+    height: 0%;
 }
 
 .recuperar{
@@ -156,9 +123,9 @@ input[type="submit"]{
 
 .palma-fondo{
     position: absolute;
-    width: 127.5vh;
+    width: 135vh;
     left: 100vh;
-    top: 15vh;
+    top: 10vh;
     left: 0vh;
     opacity: .5;
 }
@@ -168,35 +135,63 @@ input[type="submit"]{
 @media screen and (min-width: 1200px){
 
     .encabezado{
+        height: 23vh;
         width: 100%;
     }
 
-    h1{
-        text-align: center;
-    }
-
     .logo{
+        position: absolute;
+        border-radius: 50%;
+        height: 16%;
         width: 8%;
+        margin-top: 1.5%;
+        margin-left: 2%;
     }
 
+    h1{
+        font-size: 11vh !important;
+        margin-top: 1% !important;
+        font-weight: bold !important;
+    }
+
+    .inicio{
+        font-size: 6vh;
+        top: 25%;
+        left: 42.5%;
+        font-weight: bold;
+    }
+
+    .contenedor{
+        top: 37%;
+        left: 37%;
+        width: 25%;
+        height: 50%;
+        font-size: 3vh
+    }
+
+    .formulario{
+        margin-top: 8%;
+        height: 80%;
+        width: 80%;
+    }
+
+    input[type="text"], input[type="password"]{
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    input[type="submit"]{
+        height: 34px;
+        width: 28%;
+        top: 4%;
+        position: relative;
+        margin-top: 5%;
+    }
 }
 
 @media screen and (min-width: 901px) and (max-width: 1200px){
 
-    .encabezado{
-        width: 100%;
-        height: 17%;
-    }
-
-    .logo{
-        width: 13%;
-        height: 13%;
-        top: 1.5%;
-        left: 0%;
-    }
-
- 
-
+    
 }
 
 @media screen and (min-width: 601px) and (max-width: 900px){
@@ -214,12 +209,5 @@ input[type="submit"]{
     }
 }
 
-@media screen and (min-width: 1200px){
-    .logo{
-        top: 1.9%;
-        left: 1.5%;
-        width: 8%;
-        height: 15%;
-    }
-}
+
 

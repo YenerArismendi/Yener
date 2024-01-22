@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palm Oil</title>
     <link rel="stylesheet" href="CSS/sesion-dia.css">
+    <link rel="icon" type="image/png" href="IMAGENES/logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <script src="sweetalert/dist/sweetalert2.all.js"></script>
     <script src="sweetalert/dist/sweetalert2.all.min.js"></script>
     <script src="sweetalert/jquery-3.6.0.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    
 </head>
 <body>
 <?php

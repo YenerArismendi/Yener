@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: serif !important;
+    font-family: sans-serif !important;
 }
 
 html{
@@ -46,12 +46,15 @@ h1{
 
     .nombre-usuario{
         position: absolute;
-        background-color: #fff;
-        height: 35%;
+        background-color: #d0ffc7;
+        height: 34%;
         width: 13%;
         top: 35%;
         left: 70%;
         border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center !important;
     }
 
     .cerrar-sesion{
@@ -60,7 +63,105 @@ h1{
         left: 84%;
     }
 
+    /*estilos de menu pricipal*/
+
+    .lista-principal{
+        position: absolute;
+        border-right: #fff;
+        width: 17%;
+        height: 82%;
+        top: 18%;
+        box-shadow: 0px 10px 20px 0px #cacaca;
+        display: flex;
+        justify-content: start;
+    }
+
+    .nav-list{
+        
+        list-style-type: none !important;
+    }
+
+    li a{
+        text-decoration: none;
+        color: #000;
+    }
+
+    a{
+        margin-left: 2px;
+    }
+
+    img{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: -5px;
+    }
+
+
+    .contenedor-home, .contenedor-movimientos, 
+    .contenedor-registro, .contenedor-estadisticas,
+    .contenedor-stock, .contenedor-usuarios{
+        position: absolute;
+        margin-left: -32px;
+        /*border: 1px solid black;*/
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: 2%;
+    }
+
+    .contenedor-home{
+        height: 10%;
+        border-right: 2px solid #bdbdbd;
+    }
+
+    .contenedor-movimientos{
+        margin-top: 10% ;
+        height:10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-registro{
+        margin-top: 20%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-estadisticas{
+        margin-top: 30%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-stock{
+        margin-top: 40%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-usuarios{
+        margin-top: 50%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-general{
+        height: 60%;
+        width: 100%;
+    }
 }
+
+.contenedor-home:hover, .contenedor-estadisticas:hover,
+.contenedor-movimientos:hover, .contenedor-registro:hover,
+.contenedor-stock:hover, .contenedor-usuarios:hover{
+    background-color: #bdbdbd;
+    border-bottom: 1px solid  #292929;   
+}
+
 
 @media screen and (min-width: 901px) and (max-width: 1200px){
 

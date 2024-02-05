@@ -14,7 +14,7 @@ if(empty($_SESSION["id"]) ){
     <link rel="stylesheet" href="CSS/principal.css">
     <link rel="icon" type="image/png" href="IMAGENES/logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <script src="sweetalert/dist/sweetalert2.all.js"></script>
+    <script src="sweetalert/dist/sweetalert2.all.js"><  /script>
     <script src="sweetalert/dist/sweetalert2.all.min.js"></script>
     <script src="sweetalert/jquery-3.6.0.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -22,11 +22,13 @@ if(empty($_SESSION["id"]) ){
 <body>
     <div class="encabezado">
         <h1>Palm Oil</h1>
-        <div class="nombre-usuario">
-        <b>Bienvenido: <?php echo $_SESSION["nombre"]; ?> </b>
-        </div>
-        <div class="cerrar-sesion">
-            <a class="btn btn-danger" href="modulos/cerrarSesion.php">Cerrar sesion</a>
+        <div class="contenedor-cerrar-sesion">
+            <div class="nombre-usuario">
+                <b class="negrilla">&nbsp;Bienvenido: <?php echo $_SESSION["nombre"]; ?> &nbsp;</b>
+            </div>
+            <div class="cerrar-sesion">
+                <a class="btn btn-danger" href="modulos/cerrarSesion.php">Cerrar sesion</a>
+            </div>
         </div>
     </div>
     <div class="lista-principal">

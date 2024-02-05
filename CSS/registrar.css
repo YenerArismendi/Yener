@@ -1,19 +1,19 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: serif;
+  font-family: sans-serif !important;
 }
 
 html {
-  background-color: #35363a;
+  background-color: #fff;
 }
 
 .encabezado {
   position: absolute;
-  /* border: 1px solid black;*/
   height: 20%;
   width: 220.6vh;
-  background-color: #a9ddee;
+  background-color: #0a8005;
+  box-shadow: 0px 0px 20px 5px #cacaca;
 }
 
 h1 {
@@ -21,20 +21,20 @@ h1 {
   font-size: 11vh !important;
   margin-top: 1% !important;
   font-weight: bold !important;
+  color: #fff;
 }
 
 .registro {
   position: absolute;
   top: 25%;
-  left: 45%;
+  left: 43%;
   text-align: center;
   font-size: 7vh;
-  color: white;
   font-weight: bold;
 }
+
 .logo {
   position: absolute;
-  /*display: flex;*/
   height: 15%;
   width: 7%;
   margin-top: 0%;
@@ -43,7 +43,6 @@ h1 {
 }
 
 .formularios {
-  border: 1px solid black;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -53,8 +52,8 @@ h1 {
   left: 35%;
   height: 55%;
   border-radius: 5%;
-  background-color: #1f1f1f;
-  box-shadow: 0px 0px 20px 7px #000;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 7px #cacaca;
 }
 
 /*estilos para los formularios*/
@@ -68,7 +67,7 @@ input[type="email"] {
   outline: none;
   height: 35px;
   width: 55vh;
-  color: white;
+  color: #000;
   font-size: 1vw;
 }
 
@@ -79,28 +78,41 @@ input[type="email"] {
 /*estilos boton de envio de registro*/
 
 input[type="submit"] {
-  height: 12%;
   width: 30%;
   top: 4%;
   position: relative;
+}
+
+/*estilos para ingresar al inicio de sesion*/
+
+.ingresar{
+  position: relative;
+  margin-top: -5%;
+  margin-left: -5%;
+}
+
+#boton-ingresar{
+  position: relative;
+  margin-top: 1%;
+  height: 60%;
 }
 
 /*forma de aplicar estilos para cuando se realiza el autocompletado del input*/
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px #1f1f1f inset;
-  border-bottom: 1px solid #fff;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  border-bottom: 1px solid #000;
 }
 
 input:-webkit-autofill {
-  -webkit-text-fill-color: #fff;
+  -webkit-text-fill-color: #000;
 }
 
 select {
   border: none;
   text-align: center;
-  color: white;
+  color: #000;
   background: transparent;
   border-bottom: 1px solid white;
   margin-top: 5%;
@@ -124,28 +136,34 @@ option {
 }
 
 p {
-  color: white;
+  color: #000;
   position: relative;
   font-size: 2.5vh;
 }
 
 a {
   position: absolute;
-  color: #28a739 !important;
   text-decoration: none !important;
   margin-top: -14%;
   left: 23%;
   font-size: 2.5 vh;
 }
 
-a:hover {
-  color: red !important;
+a:hover{
+  color: #fff;
 }
 
-/*alerta de php*/
-.alerta {
+/*estilos para palma de fondo*/
+
+.palma-fondo{
   position: absolute;
+  width: 135vh;
+  left: 100vh;
+  top: 10vh;
+  left: 0vh;
+  opacity: .5;
 }
+
 @media screen and (min-width: 1200px) {
   .encabezado {
     width: 100%;

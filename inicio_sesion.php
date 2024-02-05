@@ -28,30 +28,21 @@
     <div>
         <img src="IMAGENES/logo.png" class="logo" alt="fondo">
     </div>
-
     <h2 class="inicio">Iniciar Sesion</h2>
     <div class="contenedor">
         <form class="formulario" method= "POST">
-        <div class="icono-persona">
-            <img src="bootstrap/iconos/person-fill.svg" alt="icono de persona">
+        <div class="icono-per">
+            <img src="bootstrap/iconos/person-fill.svg" class="icono-persona" alt="icono de persona">
         </div>
-        <div class="icono-ojo">
-            <img src="bootstrap/iconos/eye-slash-fill.svg" alt="iconodeojo" id="icono-pass" onclick="pass()">
+        <div class="icono-oj">
+            <img src="bootstrap/iconos/eye-slash-fill.svg" class="icono-ojo " alt="iconodeojo" id="icono-pass" onclick="pass()">
         </div><br>  
         </svg>
             <input type="text" name="usuario" class="nombre" placeholder="Usuario"><br>
             <input type="password" name="contraseña" class="contraseña" id="contraseña" placeholder="contraseña"><br>
             <input class="btn btn-success" type="submit"  name="ingresar"  id="btn-ingresar" value="ingresar">
-            <div class="recuperacion">
-            <div class="recuperar">
             <a class="btn btn-danger" href="#" id="recuperar">Has olvidado la contraseña</a>
-            </div>
-        <div class="regis">
             <a class="btn btn-primary" href="Registro.php" id="registro">Registrarse</a>
-        </div>
-        <!--<div class="regresar">
-            <a href="#">Regresar</a>
-        </div>-->
         </form>  
     </div>
 </body>

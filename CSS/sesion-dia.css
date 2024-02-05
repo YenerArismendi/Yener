@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: serif !important;
+    font-family: sans-serif !important;
 }
 
 html{
@@ -70,7 +70,7 @@ input[type="submit"]{
 
     position: absolute;
     color: #000;
-    top: 22%;
+    top: 20%;
     left: 80%;
 }
 
@@ -89,23 +89,20 @@ input[type="submit"]{
 }
 
 #registro{
-    position: relative;
-    width: 58%;
-    height: 0%;
-}
-
-.recuperar{
     position: absolute;
-    top: 70%;
-    left: 22%;
-}
-
-.regis{
-    position: absolute;
-    top: 50.1%;
+    width: 40%;
+    height: 12.7%;
+    top: 49.7%;
     left: 52%;
-    width:65%;
 }
+
+#recuperar{
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    top: 70%;
+}
+
 
 /*estilos para modo noche*/
 
@@ -157,7 +154,7 @@ input[type="submit"]{
     .inicio{
         font-size: 6vh;
         top: 25%;
-        left: 42.5%;
+        left: 41%;
         font-weight: bold;
     }
 

@@ -21,7 +21,10 @@ if(empty($_SESSION["id"]) ){
 </head>
 <body>
     <div class="encabezado">
-        <h1>Palm Oil</h1>
+        <div class="logo-titulo">
+            <img src="IMAGENES/logo.png" class="logo" alt="fondo">
+            <h1>Palm Oil</h1>
+        </div>
         <div class="contenedor-cerrar-sesion">
             <div class="nombre-usuario">
                 <b class="negrilla">&nbsp;Bienvenido: <?php echo $_SESSION["nombre"]; ?> &nbsp;</b>
@@ -55,8 +58,6 @@ if(empty($_SESSION["id"]) ){
             </ul>
         </nav>
     </div>
-    <div>
-        <img src="IMAGENES/logo.png" class="logo" alt="fondo">
-    </div>
+    
 </body>
 </html>

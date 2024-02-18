@@ -1,0 +1,403 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif !important;
+}
+
+html{
+    background-color: #fff;
+}
+
+.encabezado{
+    position: absolute;
+    background-color: #0a8005;
+    box-shadow: 0px 0px 20px 5px #cacaca;
+}
+
+.logo{
+    position: relative;
+    border-radius: 50%;
+}
+
+h1{
+    position: relative;
+    color: #fff;
+}
+
+@media screen and (min-width: 1200px){
+
+    .encabezado{
+        height: 14vh;
+        width: 100%;
+    }
+
+    .logo{
+        height: 95%;
+        width: 9.5%;
+        margin-top: 0.9%;
+        margin-left: 1.9%;
+    }
+
+    .logo-titulo{
+        position: absolute;
+        height: 70%;
+        width: 50%;
+        display: flex;justify-content: initial;
+        top: 7%;
+    }
+        
+    h1{
+        margin-left: 1%;
+        font-size: 10vh !important;
+        font-weight: bold !important;
+    }
+
+    .nombre-usuario{
+        position: static;
+        background-color: #d0ffc7;
+        height: 84%;
+        width: auto;
+        top: 30%;
+        left: 60%;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center !important;
+        margin-right: 2%;
+    }
+
+    .cerrar-sesion{
+        position: relative;
+        width: auto;
+        left: auto;
+    }
+    
+    .contenedor-cerrar-sesion{
+        position: absolute;
+        height: 50%;
+        width: 30%;
+        top: 20%;
+        left: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    /*estilos de menu pricipal*/
+
+    .lista-principal{
+        position: absolute;
+        border-right: #fff;
+        width: 17%;
+        height: 86%;
+        top: 14%;
+        box-shadow: 0px 10px 20px 0px #cacaca;
+        display: flex;
+        justify-content: start;
+    }
+
+    .nav-list{
+        
+        list-style-type: none !important;
+    }
+
+    li a{
+        text-decoration: none;
+        color: #000;
+    }
+
+    a{
+        margin-left: 2px;
+    }
+
+    img{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: -5px;
+    }
+
+
+    .contenedor-home, .contenedor-movimientos, 
+    .contenedor-registro, .contenedor-estadisticas,
+    .contenedor-stock, .contenedor-usuarios{
+        position: absolute;
+        margin-left: -32px;
+        /*border: 1px solid black;*/
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: 2%;
+    }
+
+    .contenedor-home{
+        height: 10%;
+    }
+
+    .contenedor-movimientos{
+        margin-top: 10% ;
+        height:10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-registro{
+        margin-top: 20%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        border-right: 2px solid #bdbdbd;
+        background-color: #efefef;
+    }
+
+    .contenedor-estadisticas{
+        margin-top: 30%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-stock{
+        margin-top: 40%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-usuarios{
+        margin-top: 50%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-general{
+        height: 60%;
+        width: 100%;
+    }
+
+    .contenedor-home:hover, .contenedor-estadisticas:hover,
+    .contenedor-movimientos:hover, .contenedor-registro:hover,
+    .contenedor-stock:hover, .contenedor-usuarios:hover{
+        background-color: #efefef;  
+    }
+
+    /*estilos para los contenedores de los formatos de regitro*/
+
+    #productos{
+        position: absolute;
+        top: 17%;
+        left: 18%;
+        height: 6%;
+        width: 10%;
+        border: none;
+        background-color: #0a8005;
+        color:  #fff;
+    } 
+
+    #proveedores{
+        position: absolute;
+        top: 17.8%;
+        left: 28%;
+        height: 5.3%;
+        width: 10%;
+        border: none;
+        color: white;
+        opacity: .3;
+        background-color: #0a8005;
+    }
+
+    #contenedor-padre-productos{
+        border: 1px solid #fff;
+        box-shadow: 0px 10px 20px 0px #cacaca;
+        border-bottom: 0px 5px 5px 5px;
+        position: absolute;
+        display: block;
+        left: 18%;
+        top: 23.14%;
+        height: 73%;
+        width: 80%;
+    }
+
+    #contenedor-padre-proveedores{
+        border: 1px solid #fff;
+        box-shadow: 0px 10px 20px 0px #cacaca;
+        border-bottom: 0px 5px 5px 5px;
+        position: absolute;
+        display: none;
+        left: 18%;
+        top: 23.14%;
+        height: 73%;
+        width: 80%;
+    }
+
+    .producto-pais, .fecha-advertencias, .descripcion,
+    .botones-registro-eliminar-modificar{
+        margin-top: 1%;
+    }
+
+    /*Estilos para formularios de registro de productos*/
+
+    .producto-pais{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .producto{
+        margin-left: 2%;
+        display: block;
+    }
+
+    .pais{
+        margin-right: 2%;
+        display: block;
+    }
+
+    .producto, .pais{
+        width: 45%;
+    }
+
+    .fecha-advertencias{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .fecha{
+        margin-left: 2%;
+        display: block;
+    }
+
+    .advertencias{
+        margin-right: 2%;
+        display: block;
+    }
+
+    .fecha, .advertencias{
+        width: 45%;
+    }
+
+    label{
+        margin-left: 1%;
+    }
+
+    .descripcion{
+        position: absolute; 
+        margin-left: 2%;
+        width: 50%;
+        height: 50%;
+    }
+
+    #descripcion-total{
+        height: 70%;
+    }
+
+    /*estilos para botones de formulario productos*/
+
+    .botones-registro-eliminar-modificar{
+        position: absolute;
+        top: 75%;
+        left: 2%;
+    }
+
+    /*estilos para formulario de proveedores*/
+
+    .nombre-identificacion{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nombre-proveedor, .identificacion-numero{
+        width: 45%;
+    }
+
+    .nombre-proveedor{
+        margin-left: 2%;
+    }
+
+    .identificacion-numero{
+        margin-right: 2%;
+    }
+
+    .telefonos{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .telefono-celular, .telefono-fijo{
+        width: 45%;
+    }
+
+    .telefono-celular{
+        margin-left: 2%;
+    }
+
+    .telefono-fijo{
+        margin-right: 2%;
+    }
+
+    .correo-ciudad{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .correo, .ciudad{
+        width: 45%;
+    }
+
+    .correo{
+        margin-left: 2%;
+    }
+
+    .ciudad{
+        margin-right: 2%;
+    }
+
+    .direccion-barrio{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .direccion, .barrio{
+        width: 45%;
+    }
+
+    .direccion{
+        margin-left: 2%;
+    }
+
+    .barrio{
+        margin-right: 2%;
+    }
+
+    .descripcion-proveedor{
+        position: absolute; 
+        margin-left: 2%;
+        width: 50%;
+        height: 40%;
+    }
+
+    #descripcion-proveedor{
+        height: 50%;
+    }
+
+    /*estilo para botones*/
+
+    .botones-registro{
+        position: absolute;
+        top: 70%;
+        left: 55%;
+
+    }
+
+    .nombre-identificacion, .telefonos,
+    .correo-ciudad, .direccion-barrio,
+    .descripcion-proveedor{
+        margin-top: 1%;
+    }
+}
+@media screen and (min-width: 901px) and (max-width: 1200px){
+
+    
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px){
+
+}

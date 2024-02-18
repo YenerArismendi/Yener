@@ -14,11 +14,9 @@
 </head>
 <body>
 <?php
-
-
     include_once ('modulos/conexion.php');
     include_once ('modulos/inicio_sesion.php');
-    ?>
+?>
     <div class="palma-fondo-contenedor">
         <img class="palma-fondo" src="IMAGENES/palma-fondo.jpg" alt="">
     </div>
@@ -31,13 +29,12 @@
     <h2 class="inicio">Iniciar Sesion</h2>
     <div class="contenedor">
         <form class="formulario" method= "POST">
-        <div class="icono-per">
-            <img src="bootstrap/iconos/person-fill.svg" class="icono-persona" alt="icono de persona">
-        </div>
-        <div class="icono-oj">
-            <img src="bootstrap/iconos/eye-slash-fill.svg" class="icono-ojo " alt="iconodeojo" id="icono-pass" onclick="pass()">
-        </div><br>  
-        </svg>
+            <div class="icono-per">
+                <img src="bootstrap/iconos/person-fill.svg" class="icono-persona" alt="icono de persona">
+            </div>
+            <div class="icono-oj">
+                <img src="bootstrap/iconos/eye-slash-fill.svg" class="icono-ojo " alt="iconodeojo" id="icono-pass" onclick="pass()">
+            </div><br>  
             <input type="text" name="usuario" class="nombre" placeholder="Usuario"><br>
             <input type="password" name="contraseña" class="contraseña" id="contraseña" placeholder="contraseña"><br>
             <input class="btn btn-success" type="submit"  name="ingresar"  id="btn-ingresar" value="ingresar">

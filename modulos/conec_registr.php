@@ -49,8 +49,8 @@ if(!empty($_POST["registrar"])){
 
                     $sql=$conexionsql->query("insert into registro(nombre,correo, usuario, contraseña,confirmar_contraseña, rol)values('$nombre', '$correo', '$usuario', '$has_contraseña', '$has_contraseña', '$roles' )");
 
-                         if($sql == 1){
-                         echo '<script>Swal.fire("Usuario guardado <br> exitosamente!");</script>';
+                        if($sql == 1){
+                        echo '<script>Swal.fire("Usuario guardado <br> exitosamente!");</script>';
 
                         }else{
                             echo '<script>Swal.fire({
@@ -67,7 +67,6 @@ if(!empty($_POST["registrar"])){
                 text: "las contraseñas no coinciden",
                 });</script>';
         }
-       
     }
 
 }

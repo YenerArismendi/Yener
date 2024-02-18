@@ -41,10 +41,10 @@ if(empty($_SESSION["id"]) ){
                     <li><img src="bootstrap/iconos/house-fill.svg" alt="home"><a href="#">Inicio</a></li>
                 </div><br>
                 <div class="contenedor-movimientos">
-                    <li><img src="bootstrap/iconos/clipboard-data-fill.svg" alt="movimientos"><a href="#">Movimientos</a></li>
+                    <li><img src="bootstrap/iconos/clipboard-data-fill.svg" alt="movimientos"><a href="movimientos.php">Movimientos</a></li>
                 </div><br>    
                 <div class="contenedor-registro">
-                    <li><img src="bootstrap/iconos/journal-plus.svg" alt="registro"><a href="#">Registro</a></li>
+                    <li><img src="bootstrap/iconos/journal-plus.svg" alt="registro"><a href="registrousuario.php">Registro</a></li>
                 </div><br>
                 <div class="contenedor-estadisticas">
                     <li><img src="bootstrap/iconos/graph-up-arrow.svg" alt="estadisticas"><a href="#">Estadisticas</a></li>
@@ -58,6 +58,6 @@ if(empty($_SESSION["id"]) ){
             </ul>
         </nav>
     </div>
-    
+
 </body>
 </html>

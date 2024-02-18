@@ -1,6 +1,6 @@
 <?php 
 
-session_start();
+session_start();    
 
 //Verificación de que el usuario lleno los campos
 if(!empty($_POST["ingresar"])){

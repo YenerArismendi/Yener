@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 //codigo para realizar el registro de los usuarios en la base de datos 
 
@@ -11,7 +11,6 @@ if(!empty($_POST["registrar"])){
             title: "Error",
             text: "Ingrese todos los datos solicitados!",
             });</script>';
-        
     }else{
 
         $contraseña = ($_POST["contraseña"]);
@@ -47,8 +46,8 @@ if(!empty($_POST["registrar"])){
                     //encriptación de contraseña para mayor seguridad   
                     $has_contraseña= password_hash($contraseña, PASSWORD_BCRYPT);
 
-                    $sql=$conexionsql->query("insert into registro(nombre,correo, usuario, contraseña,confirmar_contraseña, rol)values('$nombre', '$correo', '$usuario', '$has_contraseña', '$has_contraseña', '$roles' )");
-
+                    $sql=$conexionsql->query("insert into registro(nombre,correo, usuario, contraseña,confirmar_contraseña, rol)values('$nombre', '$correo', '$usuario', '$has_contraseña', '$has_contraseña', '$roles' )");    
+                    
                         if($sql == 1){
                         echo '<script>Swal.fire("Usuario guardado <br> exitosamente!");</script>';
 

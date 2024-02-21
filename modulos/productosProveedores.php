@@ -1,33 +1,40 @@
 <?php
 
-session_start();
-
-include_once ("conexion.php");
-
+include 'conexion.php';
+//Registro de producto 
+//verificar si los campos estan completos
 if(!empty($_POST["registrarProducto"])){
-    if(empty($_POST["nombre"]) or empty($_POST["pais"]) or empty($_POST["fecha"]) or empty($_POST["advertencias"]) or empty($_POST["descripcion"])){
-        echo'<script>Swal.fire({    
+    if(empty($_POST["nombre-producto"]) or empty($_POST["pais-producto"]) or empty($_POST["fecha-producto"]) or empty($_POST["advertencias-producto"]) or empty($_POST["descripcion-producto"])){
+        echo'<script>Swal.fire({
             icon: "error",
             title: "Error",
             text: "Ingrese todos los datos solicitados!",
             });</script>';
     }else{
-            $nombre = $_POST["nombre"];
-            $pais = $_POST["pais"];
-            $fecha = $_POST["fecha"];
-            $advertencias = $_POST["advertencias"];
-            $descripcion = $_POST["descripcion"];
+        //guardar la informacion de los formularios
 
-            $sql = $conexionsql->query("INSERT INTO producto(Nombre, pais, fecha, advertencias, descripcion) values('$nombre', '$pais', '$fecha', '$advertencias', '$descripcion')");
+        $NombreProducto = $_POST["nombre-producto"];
+        $PaisProducto = $_POST["pais-producto"];
+        $FechaProducto = $_POST["fecha-producto"];
+        $Advertencias = $_POST["advertencias-producto"];
+        $Descripcion = $_POST["descripcion-producto"];
 
+        //Almacenar datos en la bd 
+
+        $sql=$conexionsql->query("INSERT INTO producto (Nombre, pais, fecha, advertencias, descripcion) VALUES ('$NombreProducto', '$PaisProducto', '$FechaProducto', '$Advertencias', '$Descripcion')");
             if($sql){
-                echo '<script>Swal.fire("Poducto guardado <br> exitosamente!");</script>';
+                echo'<script>Swal.fire("Producto guardado <br> exitosamente!");</script>';
             }else{
-                echo '<script>Swal.fire({
+                echo'<script>Swal.fire({
                     icon: "error",
                     text: "Producto no registrado",
-                    });</script>';  
+                });</script>'; 
             }
-        } 
+    }
 }
+
+//Registro de proveedores
+//verificar campos de formularios 
+
+
 ?>

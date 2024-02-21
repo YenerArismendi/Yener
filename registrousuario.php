@@ -58,11 +58,10 @@ if(empty($_SESSION["id"]) ){
             </ul>
         </nav>
     </div>
-    <body>
-<?
-    include_once ('modulos/conexion.php');
-    include_once ('modulos/productosProveedores.php');
-?>      
+    <body>  
+
+    <!--Codigo para formulario de producto--> 
+    
     <button id="productos" onclick="mostrar();">Productos</button>
     <div id="contenedor-padre-productos">
         <div class="contenedor-hijo-productos">
@@ -70,26 +69,26 @@ if(empty($_SESSION["id"]) ){
                 <div class="producto-pais">
                     <div class="producto">
                         <label for="nombre" >Nombre del producto</label>
-                        <input name="nombre" type="text" class="form-control" id="nombre">
+                        <input name="nombre-producto" type="text" class="form-control" id="nombre">
                     </div>
                     <div class="pais">
                         <label for="origen">Pais de origen</label>
-                        <input name="pais" type="text" class="form-control"id="pais">
+                        <input name="pais-producto" type="text" class="form-control"id="pais">
                     </div>
                 </div>
                 <div class="fecha-advertencias">
                     <div class="fecha">
                         <label for="fecha">Fecha de fabricación</label>
-                        <input name="fecha" type="date" class="form-control" id="fecha-creacion">
+                        <input name="fecha-producto" type="date" class="form-control" id="fecha-creacion">
                     </div>
                     <div class="advertencias">
                         <label for="advertencias">Advertencias del producto</label><br> 
-                        <input name="advertencias" type="text" class="form-control" id="advertencias-producto">
+                        <input name="advertencias-producto" type="text" class="form-control" id="advertencias-producto">
                     </div>  
                 </div>
                 <div class="descripcion">
                     <label for="descripcion-total">Descipción del producto</label><br>
-                    <input name="descripcion" type="text" class="form-control" id="descripcion-total">
+                    <input name="descripcion-producto" type="text" class="form-control" id="descripcion-total">
                 </div>
                 <div class="botones-registro-eliminar-modificar">
                     <input class="btn btn-outline-success" type="submit" name="registrarProducto" value="Registrar">   
@@ -98,6 +97,9 @@ if(empty($_SESSION["id"]) ){
             </form>
         </div>    
     </div>  
+
+    <!--Codigo para formulario para proveedores -->
+
     <button id="proveedores" onclick="ocultar();">Proveedores</button>
     <div id="contenedor-padre-proveedores">
         <div class="contenedor-hijo-proveedores">
@@ -105,53 +107,58 @@ if(empty($_SESSION["id"]) ){
                 <div class="nombre-identificacion">
                 <div class="nombre-proveedor">
                     <label for="nombre" >Nombre completo</label>
-                    <input type="text" class="form-control" id="nombre-proveedor">
+                    <input type="text" name="nombre-proveedor" class="form-control" id="nombre-proveedor">
                 </div>
                 <div class="identificacion-numero">
                     <label for="tipo-documento">identificacion</label>
-                    <input type="number" class="form-control">
+                    <input type="number" name="identificacion-proveedor" class="form-control">
                 </div>
                 </div>
                 <div class="telefonos">
                     <div class="telefono-celular">
                         <label for="telefono">Telefono</label>
-                        <input type="number" class="form-control" id="telefono">
+                        <input type="number" name="telefono-celular" class="form-control" id="telefono">
                     </div>
                     <div class="telefono-fijo">
                         <label for="fijo">Telefono fijo</label>
-                        <input type="number" class="form-control" id="telefono-fijo">
+                        <input type="number" name="telefono-fijo" class="form-control" id="telefono-fijo">
                     </div>
                 </div>
                 <div class="correo-ciudad">
                     <div class="correo">
                         <label for="correo">Correo electronico</label>
-                        <input type="email" class="form-control" id="correo-electronico">
+                        <input type="email" name="correo-proveedor" class="form-control" id="correo-electronico">
                     </div>
                     <div class="ciudad">
                         <label for="ciudad">Ciudad</label>
-                        <input type="text" class="form-control" id="ciudad-residencia">
+                        <input type="text" name="ciudad-proveedor" class="form-control" id="ciudad-residencia">
                     </div>
                 </div>
                 <div class="direccion-barrio">
                     <div class="direccion">
                         <label for="direccion">Direccion</label>
-                        <input type="text" class="form-control" id="direccion">
+                        <input type="text" name="direccion-proveedor" class="form-control" id="direccion">
                     </div>
                     <div class="barrio">
                         <label for="barrio">Barrio</label>
-                        <input type="text" class="form-control" id="Barrio">
+                        <input type="text" name="barrio-proveedor" class="form-control" id="Barrio">
                     </div>
                 </div>
                 <div class="descripcion-proveedor">
                         <label for="descripcion">Descripción del proveedor</label>
-                        <input type="text" class="form-control" id="descripcion-proveedor">
+                        <input type="text" name="descripcion-proveedor" class="form-control" id="descripcion-proveedor">
                 </div>
                 <div class="botones-registro">
-                    <a class="btn btn-outline-success" href="#">Guardar</a>
-                    <a class="btn btn-outline-info" href="#">Limpiar</a>
+                <input type="submit" name="guardarProveedores"  class="btn btn-outline-success" value="Guardar">
+                <input type="sumit" name="limpiar" class="btn btn-outline-info" value="Limpiar">
                 </div>
             </form>
         </div>
     </div>    
+    <?php
+        include 'modulos/conexion.php';
+        include 'modulos/productosProveedores.php';
+        include 'modulos/registroproveedores.php';
+    ?>
 </body>
 </html>

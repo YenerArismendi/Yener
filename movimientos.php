@@ -11,7 +11,7 @@ if(empty($_SESSION["id"]) ){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palm Oil</title>
-    <link rel="stylesheet" href="CSS/registrousuario.css">
+    <link rel="stylesheet" href="CSS/movimientos.css">
     <link rel="icon" type="image/png" href="IMAGENES/logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <script src="sweetalert/dist/sweetalert2.all.js"><  /script>
@@ -61,49 +61,59 @@ if(empty($_SESSION["id"]) ){
     </div>
     <body>  
 
-    <!--Codigo para formulario de producto--> 
+    <!--Codigo para formulario de entrada producto--> 
     
-    <button id="productos" onclick="mostrar();">Productos</button>
-    <div id="contenedor-padre-productos">
-        <div class="contenedor-hijo-productos">
+    <button id="entradadeproductos" onclick="mostrar();">Entrada de productos</button>
+    <div id="contenedor-padre-ingreso-productos">
+        <div class="contenedor-hijo-ingreso-productos">
             <form method="POST">
-                <div class="producto-pais">
-                    <div class="producto">
-                        <label for="nombre" >Nombre del producto</label>
+                <div class="id-nombre">
+                    <div class="id-producto">
+                        <label for="nombre" >Id producto</label>
                         <input name="nombre-producto" type="text" class="form-control" id="nombre">
                     </div>
-                    <div class="pais">
-                        <label for="origen">Pais de origen</label>
+                    <div class="nombre-producto">
+                        <label for="origen">Nombre del producto</label>
                         <input name="pais-producto" type="text" class="form-control"id="pais">
                     </div>
                 </div>
-                <div class="fecha-advertencias">
-                    <div class="fecha">
-                        <label for="fecha">Fecha de fabricación</label>
-                        <input name="fecha-producto" type="date" class="form-control" id="fecha-creacion">
+                <div class="cantidadStock-tipo">
+                    <div class="cantidad-producto-stock">
+                        <label for="fecha">Cantidad en stock</label>
+                        <input name="fecha-producto" type="number" class="form-control" id="fecha-creacion">
                     </div>
-                    <div class="advertencias">
-                        <label for="advertencias">Advertencias del producto</label><br> 
+                    <div class="tipo-producto">
+                        <label for="advertencias">Tipo de semilla</label><br> 
                         <input name="advertencias-producto" type="text" class="form-control" id="advertencias-producto">
                     </div>  
                 </div>
-                <div class="descripcion">
-                    <label for="descripcion-total">Descipción del producto</label><br>
-                    <textarea name="descripcion-producto" class="form-control" id="descripcion-tatal" cols="60" rows="6"></textarea>
+                <div class="cantidad-stock">
+                    <div class="cantidad-producto">
+                        <label for="fecha">Cantidad</label>
+                        <input name="fecha-producto" type="number" class="form-control" id="fecha-creacion">
+                    </div>
+                    <div class="stock-total">
+                        <label for="advertencias">Stock total</label><br> 
+                        <input name="advertencias-producto" type="text" class="form-control" id="advertencias-producto">
+                    </div>  
+                </div>
+                <div class="descripcion-movimientos-ingresos">
+                    <label for="fecha">Descripcion o recomendaciones</label>
+                    <textarea name="descripcion-movimiento-ingreso" class="form-control" id="descripcion-ingresos" cols="50" rows="5"></textarea>
                 </div>
                 <div class="botones-registro-eliminar-modificar">
                     <input class="btn btn-outline-success" type="submit" name="registrarProducto" value="Registrar">   
                     <input type="submit" class="btn btn-outline-info" value="Limpiar" name="limpiar">
                 </div>
-            </form>
+            </form> 
         </div>    
     </div>  
 
-    <!--Codigo para formulario para proveedores -->
+    <!--Codigo para formulario para salida de proveedores -->
 
-    <button id="proveedores" onclick="ocultar();">Proveedores</button>
-    <div id="contenedor-padre-proveedores">
-        <div class="contenedor-hijo-proveedores">
+    <button id="salidadeproductos" onclick="ocultar();">Salida de productos</button>
+    <div id="contenedor-padre-salida-productos">
+        <div class="contenedor-hijo-salida-productos    ">
             <form method="POST">
                 <div class="nombre-identificacion">
                 <div class="nombre-proveedor">
@@ -146,8 +156,8 @@ if(empty($_SESSION["id"]) ){
                     </div>
                 </div>
                 <div class="descripcion-proveedor">
-                    <label for="descripcion-total">Descipción del producto</label><br>
-                    <textarea name="descripcion-proveedor" class="form-control" id="descripcion-proveedor" cols="50" rows="5"></textarea>
+                        <label for="descripcion">Descripción del proveedor</label>
+                        <input type="text" name="descripcion-proveedor" class="form-control" id="descripcion-proveedor">
                 </div>
                 <div class="botones-registro">
                 <input type="submit" name="guardarProveedores"  class="btn btn-outline-success" value="Guardar">

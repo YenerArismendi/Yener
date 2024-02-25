@@ -138,7 +138,9 @@ h1{
         height:10%;
         display: flex;
         align-items: center;
-        cursor: pointer
+        cursor: pointer;
+        border-right: 3px solid #bdbdbd;
+        background-color: #efefef;
     }
 
     .contenedor-registro{
@@ -146,8 +148,6 @@ h1{
         height: 10%;
         display: flex;
         align-items: center;
-        border-right: 3px solid #bdbdbd;
-        background-color: #efefef;
         cursor: pointer;
     }
 
@@ -186,32 +186,32 @@ h1{
         background-color: #efefef;  
     }
 
-    /*estilos para los contenedores de los formatos de regitro*/
+    /*estilos para los contenedores de los formularios de movimientos*/
 
-    #productos{
+    #entradadeproductos{
         position: absolute;
         top: 17%;
         left: 18%;
         height: 6%;
-        width: 10%;
+        width: 15%;
         border: none;
         background-color: #0a8005;
         color:  #fff;
     } 
 
-    #proveedores{
+    #salidadeproductos{
         position: absolute;
         top: 17.8%;
-        left: 28%;
+        left: 32%;
         height: 5.3%;
-        width: 10%;
+        width: 15%;
         border: none;
         color: white;
         opacity: .3;
         background-color: #0a8005;
     }
 
-    #contenedor-padre-productos{
+    #contenedor-padre-ingreso-productos{
         border: 1px solid #fff;
         box-shadow: 0px 10px 20px 0px #cacaca;
         border-bottom: 0px 5px 5px 5px;
@@ -223,7 +223,7 @@ h1{
         width: 80%;
     }
 
-    #contenedor-padre-proveedores{
+    #contenedor-padre-salida-productos{
         border: 1px solid #fff;
         box-shadow: 0px 10px 20px 0px #cacaca;
         border-bottom: 0px 5px 5px 5px;
@@ -235,49 +235,46 @@ h1{
         width: 80%;
     }
 
-    .producto-pais, .fecha-advertencias, .descripcion,
-    .botones-registro-eliminar-modificar{
+    /*Estilos para formularios de registro de productos*/
+
+    .id-nombre, .cantidadStock-tipo, .cantidad-stock, .descripcion-movimientos-ingresos{
         margin-top: 1%;
     }
 
-    /*Estilos para formularios de registro de productos*/
-
-    .producto-pais{
+    .id-nombre{
         display: flex;
         justify-content: space-between;
+        width: 45%;
     }
 
-    .producto{
+    .id-producto{
         margin-left: 2%;
         display: block;
     }
 
-    .pais{
+    .nombre-producto{
         margin-right: 2%;
         display: block;
     }
 
-    .producto, .pais{
-        width: 45%;
-    }
-
-    .fecha-advertencias{
+    .cantidadStock-tipo{
         display: flex;
         justify-content: space-between;
     }
 
-    .fecha{
+    .cantidad-producto-stock{
         margin-left: 2%;
         display: block;
+        width: 45%;
     }
 
-    .advertencias{
+    .tipo-producto{
         margin-right: 2%;
         display: block;
     }
 
-    .fecha, .advertencias{
-        width: 45%;
+    .cantidad-stock{
+        
     }
 
     label{

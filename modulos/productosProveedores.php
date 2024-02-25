@@ -1,13 +1,15 @@
 <?php
 
 include 'conexion.php';
+
 //Registro de producto 
 //verificar si los campos estan completos
+
 if(!empty($_POST["registrarProducto"])){
     if(empty($_POST["nombre-producto"]) or empty($_POST["pais-producto"]) or empty($_POST["fecha-producto"]) or empty($_POST["advertencias-producto"]) or empty($_POST["descripcion-producto"])){
         echo'<script>Swal.fire({
             icon: "error",
-            title: "Error",
+            title: "Error", 
             text: "Ingrese todos los datos solicitados!",
             });</script>';
     }else{
@@ -32,9 +34,5 @@ if(!empty($_POST["registrarProducto"])){
             }
     }
 }
-
-//Registro de proveedores
-//verificar campos de formularios 
-
 
 ?>

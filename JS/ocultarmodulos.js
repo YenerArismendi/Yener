@@ -1,3 +1,6 @@
+
+//Formulario registro de productos y proveedores 
+
 function ocultar(){
     document.getElementById('contenedor-padre-productos').style.display= 'none';
     document.getElementById('contenedor-padre-proveedores').style.display = 'block';
@@ -22,3 +25,5 @@ function mostrar(){
     document.getElementById('productos').style.top='17%';
 
 }
+
+    

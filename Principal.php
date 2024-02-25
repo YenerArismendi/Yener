@@ -37,13 +37,13 @@ if(empty($_SESSION["id"]) ){
     <div class="lista-principal">
         <nav class="nav-general">
             <ul class="nav-list">
-                <div class="contenedor-home">
+                <div class="contenedor-home" onclick="window.location.href='Principal.php'">
                     <li><img src="bootstrap/iconos/house-fill.svg" alt="home"><a href="#">Inicio</a></li>
                 </div><br>
-                <div class="contenedor-movimientos">
+                <div class="contenedor-movimientos"  onclick="window.location.href='movimientos.php'">
                     <li><img src="bootstrap/iconos/clipboard-data-fill.svg" alt="movimientos"><a href="movimientos.php">Movimientos</a></li>
                 </div><br>    
-                <div class="contenedor-registro">
+                <div class="contenedor-registro" onclick="window.location.href='registrousuario.php'">
                     <li><img src="bootstrap/iconos/journal-plus.svg" alt="registro"><a href="registrousuario.php">Registro</a></li>
                 </div><br>
                 <div class="contenedor-estadisticas">

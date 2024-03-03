@@ -155,11 +155,70 @@ if(empty($_SESSION["id"]) ){
                 </div>
             </form>
         </div>
-    </div>    
+    </div> 
+
+    <!--Codigo para formulario para registro de usuarios -->
+
+    <button id="usuario" onclick="ocultarultimo();">Usuario</button>
+    <div id="contenedor-padre-usuario">
+        <div class="contenedor-hijo-usuario">
+            <form method="POST">
+                <div class="id-nombre">
+                    <div class="id-usuario">
+                        <label for="id-user">Documento de usuario</label>
+                        <input type="number" name="id-user" class="form-control" id="id-user">
+                    </div>
+                    <div class="nombre-usuario-completo">
+                        <label for="nombre-user">Nombre de usuario</label>
+                        <input type="text" name="nombre-user" class="form-control">
+                    </div>
+                </div>
+                <div class="fecha-direccion">
+                    <div class="fecha-usuario">
+                        <label for="fecha-user">Fecha de cumpleaños</label>
+                        <input type="date" name="fecha-user" class="form-control" id="fecha-user">
+                    </div>
+                    <div class="direccion-usuario">
+                        <label for="direccion-user">Direccion</label>
+                        <input type="text" name="direccion-user" class="form-control" id="direccion-user">
+                    </div>
+                </div>
+                <div class="ciudad-barrio">
+                    <div class="ciudad-usuario">
+                        <label for="ciudad-user">Ciudad</label>
+                        <input type="text" name="ciudad-user" class="form-control" id="ciudad-user">
+                    </div>
+                    <div class="barrio-usuario">
+                        <label for="barrio-user">Barrio</label>
+                        <input type="text" name="barrio-user" class="form-control" id="barrio-user">
+                    </div>
+                </div>
+                <div class="telefono-correo">
+                    <div class="telefono-usuario">
+                        <label for="telefono-user">Telefono</label>
+                        <input type="number" name="telefono-user" class="form-control" id="telefono-user">
+                    </div>
+                    <div class="correo-usuario">
+                        <label for="correo-user">Correo</label>
+                        <input type="email" name="correo-user" class="form-control" id="correo-user">
+                    </div>
+                </div>
+                <div class="descripcion-usuario">
+                    <label for="descripcion-user">Descipción del usuario</label><br>
+                    <textarea name="descripcion-user" class="form-control" id="descripcion-user" cols="50" rows="4"></textarea>
+                </div>
+                <div class="botones-registro">
+                <input type="submit" name="registrousuario"  class="btn btn-outline-success" value="Guardar">
+                <input type="sumit" name="limpiar" class="btn btn-outline-info" value="Limpiar">
+                </div>
+            </form>
+        </div>
+    </div> 
     <?php
         include 'modulos/conexion.php';
         include 'modulos/productosProveedores.php';
         include 'modulos/registroproveedores.php';
+        include 'modulos/Registrousuario.php';
     ?>
 </body>
 </html>

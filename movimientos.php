@@ -69,7 +69,7 @@ if(empty($_SESSION["id"]) ){
             <form method="POST">
                 <div class="id-nombre">
                     <div class="id-producto">
-                        <label for="nombre" >Id producto</label>
+                        <label for="nombre" >ID producto</label>
                         <input name="nombre-producto" type="text" class="form-control" id="nombre">
                     </div>
                     <div class="nombre-producto">
@@ -101,7 +101,7 @@ if(empty($_SESSION["id"]) ){
                     <label for="fecha">Descripcion o recomendaciones</label>
                     <textarea name="descripcion-movimiento-ingreso" class="form-control" id="descripcion-ingresos" cols="50" rows="5"></textarea>
                 </div>
-                <div class="botones-registro-eliminar-modificar">
+                <div class="botones-registro-limpiar">
                     <input class="btn btn-outline-success" type="submit" name="registrarProducto" value="Registrar">   
                     <input type="submit" class="btn btn-outline-info" value="Limpiar" name="limpiar">
                 </div>
@@ -116,14 +116,14 @@ if(empty($_SESSION["id"]) ){
         <div class="contenedor-hijo-salida-productos    ">
             <form method="POST">
                 <div class="nombre-identificacion">
-                <div class="nombre-proveedor">
-                    <label for="nombre" >Nombre completo</label>
-                    <input type="text" name="nombre-proveedor" class="form-control" id="nombre-proveedor">
-                </div>
-                <div class="identificacion-numero">
-                    <label for="tipo-documento">identificacion</label>
-                    <input type="number" name="identificacion-proveedor" class="form-control">
-                </div>
+                    <div class="nombre-proveedor">
+                        <label for="nombre" >Nombre del producto</label>
+                        <input type="text" name="nombre-proveedor" class="form-control" id="nombre-proveedor">
+                    </div>
+                    <div class="identificacion-numero">
+                        <label for="tipo-documento">identificacion</label>
+                        <input type="number" name="identificacion-proveedor" class="form-control">
+                    </div>
                 </div>
                 <div class="telefonos">
                     <div class="telefono-celular">
@@ -157,7 +157,7 @@ if(empty($_SESSION["id"]) ){
                 </div>
                 <div class="descripcion-proveedor">
                         <label for="descripcion">Descripción del proveedor</label>
-                        <input type="text" name="descripcion-proveedor" class="form-control" id="descripcion-proveedor">
+                        <textarea name="descripcion-movimiento-ingreso" class="form-control" id="descripcion-proveedor" cols="30" rows="4"></textarea>
                 </div>
                 <div class="botones-registro">
                 <input type="submit" name="guardarProveedores"  class="btn btn-outline-success" value="Guardar">

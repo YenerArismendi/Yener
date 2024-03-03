@@ -216,7 +216,7 @@ h1{
         box-shadow: 0px 10px 20px 0px #cacaca;
         border-bottom: 0px 5px 5px 5px;
         position: absolute;
-        display: block;
+        display: none;
         left: 18%;
         top: 23.14%;
         height: 73%;
@@ -227,8 +227,8 @@ h1{
         border: 1px solid #fff;
         box-shadow: 0px 10px 20px 0px #cacaca;
         border-bottom: 0px 5px 5px 5px;
-        position: absolute;
-        display: none;
+        position: absolute; 
+        display: block;
         left: 18%;
         top: 23.14%;
         height: 73%;
@@ -237,8 +237,10 @@ h1{
 
     /*Estilos para formularios de registro de productos*/
 
-    .id-nombre, .cantidadStock-tipo, .cantidad-stock, .descripcion-movimientos-ingresos{
+    .id-nombre, .cantidadStock-tipo, .cantidad-stock{
         margin-top: 1%;
+        margin-left: 2%;
+        width: 150vh !important;
     }
 
     .id-nombre{
@@ -248,13 +250,14 @@ h1{
     }
 
     .id-producto{
-        margin-left: 2%;
         display: block;
+        width: 45%;
     }
 
     .nombre-producto{
         margin-right: 2%;
         display: block;
+        width: 45%;
     }
 
     .cantidadStock-tipo{
@@ -263,7 +266,6 @@ h1{
     }
 
     .cantidad-producto-stock{
-        margin-left: 2%;
         display: block;
         width: 45%;
     }
@@ -271,28 +273,37 @@ h1{
     .tipo-producto{
         margin-right: 2%;
         display: block;
+        width: 45%;
     }
 
     .cantidad-stock{
-        
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .cantidad-producto{
+        display: block;
+        width: 45%;
+    }
+
+    .stock-total{
+        margin-right: 2%;
+        display: block;
+        width: 45%;
     }
 
     label{
         margin-left: 1%;
     }
 
-    .descripcion{
+    .descripcion-movimientos-ingresos{
         position: absolute; 
         margin-left: 2%;
         width: 50%;
         height: 50%;
     }
 
-    #descripcion-total{
-        height: 70%;
-    }
-
-    /*estilos para botones de formulario productos*/
+    /*estilos para botones de formulario entrada productos*/
 
     .botones-registro-eliminar-modificar{
         position: absolute;
@@ -300,7 +311,14 @@ h1{
         left: 2%;
     }
 
-    /*estilos para formulario de proveedores*/
+    /*estilos para formulario de salida de prodcutos*/
+
+    .nombre-identificacion, .telefonos, .correo-ciudad, .direccion-barrio, .descripcion-preveedor{
+        border: 1px solid black;
+        width: 95%;
+        margin-top: 1%;
+        margin-left: 2%;
+    }
 
     .nombre-identificacion{
         display: flex;
@@ -308,15 +326,8 @@ h1{
     }
 
     .nombre-proveedor, .identificacion-numero{
+        display: block;
         width: 45%;
-    }
-
-    .nombre-proveedor{
-        margin-left: 2%;
-    }
-
-    .identificacion-numero{
-        margin-right: 2%;
     }
 
     .telefonos{
@@ -325,15 +336,8 @@ h1{
     }
 
     .telefono-celular, .telefono-fijo{
+        display: block;
         width: 45%;
-    }
-
-    .telefono-celular{
-        margin-left: 2%;
-    }
-
-    .telefono-fijo{
-        margin-right: 2%;
     }
 
     .correo-ciudad{
@@ -342,59 +346,36 @@ h1{
     }
 
     .correo, .ciudad{
+        display: block;
         width: 45%;
-    }
-
-    .correo{
-        margin-left: 2%;
-    }
-
-    .ciudad{
-        margin-right: 2%;
     }
 
     .direccion-barrio{
         display: flex;
         justify-content: space-between;
     }
-
+    
     .direccion, .barrio{
+        display: block;
         width: 45%;
     }
 
-    .direccion{
-        margin-left: 2%;
-    }
-
-    .barrio{
-        margin-right: 2%;
-    }
-
     .descripcion-proveedor{
-        position: absolute; 
         margin-left: 2%;
         width: 50%;
-        height: 40%;
     }
 
-    #descripcion-proveedor{
-        height: 50%;
-    }
+
 
     /*estilo para botones*/
 
     .botones-registro{
         position: absolute;
-        top: 70%;
+        top: 85%;
         left: 55%;
 
     }
 
-    .nombre-identificacion, .telefonos,
-    .correo-ciudad, .direccion-barrio,
-    .descripcion-proveedor{
-        margin-top: 1%;
-    }
 }
 @media screen and (min-width: 901px) and (max-width: 1200px){
 

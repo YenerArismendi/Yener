@@ -216,11 +216,12 @@ h1{
         box-shadow: 0px 10px 20px 0px #cacaca;
         border-bottom: 0px 5px 5px 5px;
         position: absolute;
-        display: none;
+        display: block;
         left: 18%;
         top: 23.14%;
         height: 73%;
         width: 80%;
+        overflow: scroll;
     }
 
     #contenedor-padre-salida-productos{
@@ -228,7 +229,7 @@ h1{
         box-shadow: 0px 10px 20px 0px #cacaca;
         border-bottom: 0px 5px 5px 5px;
         position: absolute; 
-        display: block;
+        display: none;
         left: 18%;
         top: 23.14%;
         height: 73%;
@@ -237,144 +238,45 @@ h1{
 
     /*Estilos para formularios de registro de productos*/
 
-    .id-nombre, .cantidadStock-tipo, .cantidad-stock{
+    .id-nombreProducto, .fecha-cantidadStock, .id-nombre-comprador, .cantidad-preciouni, .preciototal-stocktotal{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .id-producto, .nombre-producto, .fecha-venta, .cantidad-stock, .id-comprador, .nombre-comprador, .cantidad-venta, .precio-unidad, 
+    .precio-total, .stock-total{
+        display: block;
+        width: 45%;
         margin-top: 1%;
+    }
+
+    .id-producto, .fecha-venta, .id-comprador, .cantidad-venta, .precio-total{
         margin-left: 2%;
-        width: 150vh !important;
     }
 
-    .id-nombre{
-        display: flex;
-        justify-content: space-between;
-        width: 45%;
-    }
-
-    .id-producto{
-        display: block;
-        width: 45%;
-    }
-
-    .nombre-producto{
+    .nombre-producto, .cantidad-stock, .nombre-comprador, .precio-unidad, .stock-total{
         margin-right: 2%;
-        display: block;
-        width: 45%;
-    }
-
-    .cantidadStock-tipo{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .cantidad-producto-stock{
-        display: block;
-        width: 45%;
-    }
-
-    .tipo-producto{
-        margin-right: 2%;
-        display: block;
-        width: 45%;
-    }
-
-    .cantidad-stock{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .cantidad-producto{
-        display: block;
-        width: 45%;
-    }
-
-    .stock-total{
-        margin-right: 2%;
-        display: block;
-        width: 45%;
-    }
-
-    label{
-        margin-left: 1%;
     }
 
     .descripcion-movimientos-ingresos{
-        position: absolute; 
         margin-left: 2%;
-        width: 50%;
-        height: 50%;
+        width: 60%;
+        margin-top: 1%;
     }
 
     /*estilos para botones de formulario entrada productos*/
 
-    .botones-registro-eliminar-modificar{
+    .botones-registro-limpiar{
         position: absolute;
-        top: 75%;
+        top: 120%;
         left: 2%;
+        margin-bottom: 5%;
+        height: 10%;
     }
 
     /*estilos para formulario de salida de prodcutos*/
 
-    .nombre-identificacion, .telefonos, .correo-ciudad, .direccion-barrio, .descripcion-preveedor{
-        border: 1px solid black;
-        width: 95%;
-        margin-top: 1%;
-        margin-left: 2%;
-    }
-
-    .nombre-identificacion{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .nombre-proveedor, .identificacion-numero{
-        display: block;
-        width: 45%;
-    }
-
-    .telefonos{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .telefono-celular, .telefono-fijo{
-        display: block;
-        width: 45%;
-    }
-
-    .correo-ciudad{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .correo, .ciudad{
-        display: block;
-        width: 45%;
-    }
-
-    .direccion-barrio{
-        display: flex;
-        justify-content: space-between;
-    }
     
-    .direccion, .barrio{
-        display: block;
-        width: 45%;
-    }
-
-    .descripcion-proveedor{
-        margin-left: 2%;
-        width: 50%;
-    }
-
-
-
-    /*estilo para botones*/
-
-    .botones-registro{
-        position: absolute;
-        top: 85%;
-        left: 55%;
-
-    }
 
 }
 @media screen and (min-width: 901px) and (max-width: 1200px){

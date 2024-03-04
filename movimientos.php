@@ -14,7 +14,7 @@ if(empty($_SESSION["id"]) ){
     <link rel="stylesheet" href="CSS/movimientos.css">
     <link rel="icon" type="image/png" href="IMAGENES/logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <script src="sweetalert/dist/sweetalert2.all.js"><  /script>
+    <script src="sweetalert/dist/sweetalert2.all.js"></script>
     <script src="sweetalert/dist/sweetalert2.all.min.js"></script>
     <script src="sweetalert/jquery-3.6.0.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -60,41 +60,64 @@ if(empty($_SESSION["id"]) ){
         </nav>
     </div>
     <body>  
-
-    <!--Codigo para formulario de entrada producto--> 
+    <?php
+        include 'modulos/conexion.php';
+        include 'modulos/ventaprocuto.php';
+    ?>
+    <!--Codigo para formulario de venta producto--> 
     
     <button id="entradadeproductos" onclick="mostrar();">Entrada de productos</button>
     <div id="contenedor-padre-ingreso-productos">
         <div class="contenedor-hijo-ingreso-productos">
             <form method="POST">
-                <div class="id-nombre">
+                <div class="id-nombreProducto">
                     <div class="id-producto">
-                        <label for="nombre" >ID producto</label>
-                        <input name="nombre-producto" type="text" class="form-control" id="nombre">
+                        <label for="id-producto" >ID producto</label>
+                        <input name="id-producto" type="text" class="form-control" id="id-producto"  placeholder="0" value="<?php echo $_SESSION["ID_producto"];?>" >
                     </div>
                     <div class="nombre-producto">
-                        <label for="origen">Nombre del producto</label>
-                        <input name="pais-producto" type="text" class="form-control"id="pais">
+                        <label for="nombre-producto">Nombre del producto</label>
+                        <input name="nombre-producto" type="text" class="form-control"id="nombre-producto" value="<?php echo $_SESSION["Nombre"]; ?>">
                     </div>
                 </div>
-                <div class="cantidadStock-tipo">
-                    <div class="cantidad-producto-stock">
-                        <label for="fecha">Cantidad en stock</label>
-                        <input name="fecha-producto" type="number" class="form-control" id="fecha-creacion">
+                <div class="fecha-cantidadStock">
+                    <div class="fecha-venta">
+                        <label for="date-venta">Fecha de venta</label>
+                        <input name="fecha-producto" type="date" class="form-control" id="fecha-creacion">
                     </div>
-                    <div class="tipo-producto">
-                        <label for="advertencias">Tipo de semilla</label><br> 
-                        <input name="advertencias-producto" type="text" class="form-control" id="advertencias-producto">
+                    <div class="cantidad-stock">
+                        <label for="cantidad-stock">Stok</label><br> 
+                        <input name="advertencias-producto" type="text" class="form-control" id="advertencias-producto" value="<?php echo $_SESSION["stock"]; ?>">
                     </div>  
                 </div>
-                <div class="cantidad-stock">
-                    <div class="cantidad-producto">
-                        <label for="fecha">Cantidad</label>
-                        <input name="fecha-producto" type="number" class="form-control" id="fecha-creacion">
+                <div class="id-nombre-comprador">
+                    <div class="id-comprador">
+                        <label for="id-buyer">ID comprador</label>
+                        <input name="id-compardor" type="text" class="form-control" id="id-buyer" value="<?php echo $_SESSION["ID_usuario"];?>">
+                    </div>
+                    <div class="nombre-comprador">
+                        <label for="nombre-buyer">Nombre comprador</label><br> 
+                        <input name="nombre-buyer" type="text" class="form-control" id="nombre-buyer" value="<?php echo $_SESSION["nombre_usuario"];?>">
+                    </div>  
+                </div>
+                <div class="cantidad-preciouni">
+                    <div class="cantidad-venta">
+                        <label for="cantidad-sale">Cantidad</label>
+                        <input name="cantidad-sale" type="number" class="form-control" id="cantidad-sale">
+                    </div>
+                    <div class="precio-unidad">
+                        <label for="precio-unit">Precio por unidad</label><br> 
+                        <input name="precio-unit" type="text" class="form-control" id="precio-unit">
+                    </div>  
+                </div>
+                <div class="preciototal-stocktotal">
+                    <div class="precio-total">
+                        <label for="total-price">Precio total</label>
+                        <input name="id-buyer" type="number" class="form-control" id="id-buyer">
                     </div>
                     <div class="stock-total">
-                        <label for="advertencias">Stock total</label><br> 
-                        <input name="advertencias-producto" type="text" class="form-control" id="advertencias-producto">
+                        <label for="stock-total">Stock total</label><br> 
+                        <input name="stock-total" type="text" class="form-control" id="stock-total">
                     </div>  
                 </div>
                 <div class="descripcion-movimientos-ingresos">
@@ -109,7 +132,7 @@ if(empty($_SESSION["id"]) ){
         </div>    
     </div>  
 
-    <!--Codigo para formulario para salida de proveedores -->
+    <!--Codigo para formulario para entrada de productos -->
 
     <button id="salidadeproductos" onclick="ocultar();">Salida de productos</button>
     <div id="contenedor-padre-salida-productos">
@@ -166,10 +189,5 @@ if(empty($_SESSION["id"]) ){
             </form>
         </div>
     </div>    
-    <?php
-        include 'modulos/conexion.php';
-        include 'modulos/productosProveedores.php';
-        include 'modulos/registroproveedores.php';
-    ?>
 </body>
 </html>

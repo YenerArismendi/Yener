@@ -4,7 +4,7 @@ include 'conexion.php';
 
 //para completar campos al ingresar el id del producto
 
-$IDproducto = isset($_POST["id-producto"]) ? $_POST["id-producto"] : 0;
+$IDproducto = isset($_POST["id-producto"]) ? $_POST["id-producto"] : 0 ;
 
 $sql = "SELECT * FROM producto WHERE ID_Producto = $IDproducto";
 $result = $conexionsql->query($sql);
@@ -24,7 +24,7 @@ if($result->num_rows > 0 ){
 
 //para completar campos al ingresar el id del comprador o cliente 
 
-$IDcomprador = isset($_POST["id-comprador"]) ? $_POST["id-comprador"] : 0;
+$IDcomprador = isset($_POST["id-comprador"]) ? $_POST["id-comprador"] : 1;
 
 $sql = "SELECT * FROM usuario WHERE ID_usuario = $IDcomprador";
 $resultado = $conexionsql->query($sql);

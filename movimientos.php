@@ -73,7 +73,7 @@ if(empty($_SESSION["id"]) ){
                 <div class="id-nombreProducto">
                     <div class="id-producto">
                         <label for="id-producto" >ID producto</label>
-                        <input name="id-producto" type="text" class="form-control" id="id-producto"  placeholder="0" value="<?php echo $_SESSION["ID_producto"];?>" >
+                        <input name="id-producto" type="text" class="form-control" id="id-producto" value="<?php echo $_SESSION["ID_producto"];?>" >
                     </div>
                     <div class="nombre-producto">
                         <label for="nombre-producto">Nombre del producto</label>
@@ -93,7 +93,7 @@ if(empty($_SESSION["id"]) ){
                 <div class="id-nombre-comprador">
                     <div class="id-comprador">
                         <label for="id-buyer">ID comprador</label>
-                        <input name="id-compardor" type="text" class="form-control" id="id-buyer" value="<?php echo $_SESSION["ID_usuario"];?>">
+                        <input name="id-comprador" type="text" class="form-control" id="id-buyer" value="<?php echo $_SESSION["ID_usuario"];?>">
                     </div>
                     <div class="nombre-comprador">
                         <label for="nombre-buyer">Nombre comprador</label><br> 

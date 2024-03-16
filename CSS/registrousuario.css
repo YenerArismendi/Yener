@@ -236,7 +236,7 @@ h1{
     }
 
     .producto-pais, .fecha-advertencias, .descripcion,
-    .botones-registro-eliminar-modificar{
+    .botones-registro-eliminar-modificar, .precio{
         margin-top: 1%;
     }
 
@@ -258,6 +258,11 @@ h1{
     }
 
     .producto, .pais{
+        width: 45%;
+    }
+
+    .precio{
+        margin-left: 2%;
         width: 45%;
     }
 
@@ -299,7 +304,7 @@ h1{
 
     .botones-registro-eliminar-modificar{
         position: absolute;
-        top: 75%;
+        top: 87%;
         left: 2%;
     }
 

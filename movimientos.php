@@ -62,7 +62,7 @@ if(empty($_SESSION["id"]) ){
     <body>  
     <?php
         include 'modulos/conexion.php';
-        include 'modulos/ventaprocuto.php';
+        include 'modulos/entradaproducto.php';
     ?>
     <!--Codigo para formulario de venta producto--> 
     
@@ -73,7 +73,7 @@ if(empty($_SESSION["id"]) ){
                 <div class="id-nombreProducto">
                     <div class="id-producto">
                         <label for="id-producto" >ID producto</label>
-                        <input name="id-producto" type="text" class="form-control" id="id-producto" value="<?php echo $_SESSION["ID_producto"];?>" >
+                        <input name="idproducto" type="number"  class="form-control"  id="id-producto"  value="<?php echo $_SESSION["IDproducto"] = isset($_POST["idproducto"]) ? $_POST["idproducto"] : 0;?>">
                     </div>
                     <div class="nombre-producto">
                         <label for="nombre-producto">Nombre del producto</label>
@@ -81,9 +81,9 @@ if(empty($_SESSION["id"]) ){
                     </div>
                 </div>
                 <div class="fecha-cantidadStock">
-                    <div class="fecha-venta">
-                        <label for="date-venta">Fecha de venta</label>
-                        <input name="fecha-producto" type="date" class="form-control" id="fecha-creacion">
+                    <div class="precio-unidad">
+                        <label for="precio-unit">Precio por unidad</label><br> 
+                        <input name="precio-unit" type="text" class="form-control" id="precio-unit">
                     </div>
                     <div class="cantidad-stock">
                         <label for="cantidad-stock">Stok</label><br> 
@@ -93,7 +93,7 @@ if(empty($_SESSION["id"]) ){
                 <div class="id-nombre-comprador">
                     <div class="id-comprador">
                         <label for="id-buyer">ID comprador</label>
-                        <input name="id-comprador" type="text" class="form-control" id="id-buyer" value="<?php echo $_SESSION["ID_usuario"];?>">
+                        <input name="id-comprador" type="text" class="form-control" id="id-buyer" value="<?php echo $_SESSION["ID_usuario"] = isset($_POST["id-comprador"]) ? $_POST["id-comprador"] : 0;?>">
                     </div>
                     <div class="nombre-comprador">
                         <label for="nombre-buyer">Nombre comprador</label><br> 
@@ -105,15 +105,15 @@ if(empty($_SESSION["id"]) ){
                         <label for="cantidad-sale">Cantidad</label>
                         <input name="cantidad-sale" type="number" class="form-control" id="cantidad-sale">
                     </div>
-                    <div class="precio-unidad">
-                        <label for="precio-unit">Precio por unidad</label><br> 
-                        <input name="precio-unit" type="text" class="form-control" id="precio-unit">
+                    <div class="fecha-venta">
+                        <label for="date-venta">Fecha de venta</label>
+                        <input name="fecha-producto" type="date" class="form-control" id="fecha-creacion">
                     </div>  
                 </div>
                 <div class="preciototal-stocktotal">
                     <div class="precio-total">
                         <label for="total-price">Precio total</label>
-                        <input name="id-buyer" type="number" class="form-control" id="id-buyer">
+                        <input name="id-buyer" type="number" class="form-control" id="id-buyer" value="<?php $total  ?>">
                     </div>
                     <div class="stock-total">
                         <label for="stock-total">Stock total</label><br> 

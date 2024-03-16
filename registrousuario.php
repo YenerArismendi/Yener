@@ -87,6 +87,12 @@ if(empty($_SESSION["id"]) ){
                         <input name="advertencias-producto" type="text" class="form-control" id="advertencias-producto">
                     </div>  
                 </div>
+                <div class="precio">
+                    <div class="precio-unidad">
+                        <label for="precio-unidad-producto">Precio unitario</label>
+                        <input type="number" step="1" min="0" class="form-control" name="precio-unidad">
+                    </div>
+                </div>
                 <div class="descripcion">
                     <label for="descripcion-total">Descipción del producto</label><br>
                     <textarea name="descripcion-producto" class="form-control" id="descripcion-tatal" cols="60" rows="6"></textarea>

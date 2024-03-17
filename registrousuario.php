@@ -90,7 +90,7 @@ if(empty($_SESSION["id"]) ){
                 <div class="precio">
                     <div class="precio-unidad">
                         <label for="precio-unidad-producto">Precio unitario</label>
-                        <input type="number" step="1" min="0" class="form-control" name="precio-unidad">
+                        <input type="number" class="form-control" name="precio-unidad">
                     </div>
                 </div>
                 <div class="descripcion">

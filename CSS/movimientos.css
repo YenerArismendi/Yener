@@ -238,16 +238,26 @@ h1{
 
     /*Estilos para formularios de registro de productos*/
 
-    .id-nombreProducto, .fecha-cantidadStock, .id-nombre-comprador, .cantidad-preciouni, .preciototal-stocktotal{
+    .id-nombreProducto, .fecha-cantidadStock, .id-nombre-comprador, .cantidad-preciouni, .preciototal-stocktotal-botoncalcular{
         display: flex;
         justify-content: space-between;
     }
 
-    .id-producto, .nombre-producto, .fecha-venta, .cantidad-stock, .id-comprador, .nombre-comprador, .cantidad-venta, .precio-unidad, 
-    .precio-total, .stock-total{
+    .id-producto, .nombre-producto, .fecha-venta, .cantidad-stock, .id-comprador, .nombre-comprador, .cantidad-venta, .precio-unidad, .stock-total{
         display: block;
         width: 45%;
         margin-top: 1%;
+    }
+
+    .precio-total{  
+        width: 45%;
+        margin-top: 1%;
+    }
+
+    .btn-calcular{
+        margin-right: 5%;
+        margin-top: 3.2%;
+
     }
 
     .id-producto, .precio-unidad, .id-comprador, .cantidad-venta, .precio-total{

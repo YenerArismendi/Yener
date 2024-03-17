@@ -31,7 +31,10 @@ if($result->num_rows > 0 ){
     $row = $result->fetch_assoc();
     $_SESSION["IDproducto"] = $row["ID_Producto"];
     $_SESSION["Nombre"] = $row["Nombre"];
-    $_SESSION["stock"] = $row["stock"];     
+    $_SESSION["stock"] = $row["stock"];   
+    $_SESSION["PrecioUnidad"] = $row["PrecioUnidad"];
+    $precioproducto = $row["PrecioUnidad"];
+    $stocktotal = $row["stock"];
 }else{
     echo '<script>Swal.fire({
         icon: "error",
@@ -42,6 +45,18 @@ if($result->num_rows > 0 ){
 
 //almacenar datos para realizar operacion para el precio total 
 
+    $totalcompra;
 
+        $totalcompra = $_POST["cantidad-sale"];
+
+        $precioproductonumber = intval($precioproducto);
+        $totalcompranumber = intval($totalcompra);
+        $totalstocknumber = intval($stocktotal);
+
+        $totalproducto = $precioproductonumber * $totalcompranumber;
+
+    $totalStock = isset($_POST["stock-total"]) ? $_POST["stock-total"] : 0;
+
+        $totalStockproducto = $totalstocknumber - $totalcompranumber;
 
 ?>

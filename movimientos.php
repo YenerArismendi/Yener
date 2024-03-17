@@ -66,7 +66,7 @@ if(empty($_SESSION["id"]) ){
     ?>
     <!--Codigo para formulario de venta producto--> 
     
-    <button id="entradadeproductos" onclick="mostrar();">Entrada de productos</button>
+    <button id="entradadeproductos" onclick="mostrar();">Venta de productos</button>
     <div id="contenedor-padre-ingreso-productos">
         <div class="contenedor-hijo-ingreso-productos">
             <form method="POST">
@@ -83,7 +83,7 @@ if(empty($_SESSION["id"]) ){
                 <div class="fecha-cantidadStock">
                     <div class="precio-unidad">
                         <label for="precio-unit">Precio por unidad</label><br> 
-                        <input name="precio-unit" type="text" class="form-control" id="precio-unit">
+                        <input name="precio-unit" type="text" class="form-control" id="precio-unit" value="<?php echo $_SESSION["PrecioUnidad"];?>">
                     </div>
                     <div class="cantidad-stock">
                         <label for="cantidad-stock">Stok</label><br> 
@@ -103,21 +103,24 @@ if(empty($_SESSION["id"]) ){
                 <div class="cantidad-preciouni">
                     <div class="cantidad-venta">
                         <label for="cantidad-sale">Cantidad</label>
-                        <input name="cantidad-sale" type="number" class="form-control" id="cantidad-sale">
+                        <input name="cantidad-sale" type="text" class="form-control" id="cantidad-sale" value="<?php echo $totalcompra = isset($_POST["cantidad-sale"]) ? $_POST["cantidad-sale"] : 0;?>">
                     </div>
                     <div class="fecha-venta">
                         <label for="date-venta">Fecha de venta</label>
                         <input name="fecha-producto" type="date" class="form-control" id="fecha-creacion">
                     </div>  
                 </div>
-                <div class="preciototal-stocktotal">
+                <div class="preciototal-stocktotal-botoncalcular">
                     <div class="precio-total">
                         <label for="total-price">Precio total</label>
-                        <input name="id-buyer" type="number" class="form-control" id="id-buyer" value="<?php $total  ?>">
+                        <input name="id-buyer" type="text" class="form-control" id="id-buyer" value="<?php echo $totalproducto; ?>">
                     </div>
+                    <!--<<div class="btn-calcular">
+                        <input type="submit" class="btn btn-danger" value="Total" name="btncalcular">
+                    </div>-->
                     <div class="stock-total">
                         <label for="stock-total">Stock total</label><br> 
-                        <input name="stock-total" type="text" class="form-control" id="stock-total">
+                        <input name="stock-total" type="text"   class="form-control" id="stock-total" value="<?php echo $totalStockproducto; ?>">
                     </div>  
                 </div>
                 <div class="descripcion-movimientos-ingresos">

@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif !important;
+}
+
+html{
+    background-color: #fff;
+}
+
+.encabezado{
+    position: absolute;
+    background-color: #0a8005;
+    box-shadow: 0px 0px 20px 5px #cacaca;
+}
+
+.logo{
+    position: relative;
+    border-radius: 50%;
+}
+
+h1{
+    position: relative;
+    color: #fff;
+}
+
+@media screen and (min-width: 1200px){
+
+    .encabezado{
+        height: 14vh;
+        width: 100%;
+    }
+
+    .logo{
+        height: 95%;
+        width: 9.5%;
+        margin-top: 0.9%;
+        margin-left: 1.9%;
+    }
+
+    .logo-titulo{
+        position: absolute;
+        height: 70%;
+        width: 50%;
+        display: flex;justify-content: initial;
+        top: 7%;
+    }
+        
+    h1{
+        margin-left: 1%;
+        font-size: 10vh !important;
+        font-weight: bold !important;
+    }
+
+    .nombre-usuario{
+        position: static;
+        background-color: #d0ffc7;
+        height: 84%;
+        width: auto;
+        top: 30%;
+        left: 60%;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center !important;
+        margin-right: 2%;
+    }
+
+    .cerrar-sesion{
+        position: relative;
+        width: auto;
+        left: auto;        
+    }
+    
+    .contenedor-cerrar-sesion{
+        position: absolute;
+        height: 50%;
+        width: 30%;
+        top: 20%;
+        left: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    /*estilos de menu pricipal*/
+
+    .lista-principal{
+        position: absolute;
+        border-right: #fff;
+        width: 17%;
+        height: 86%;
+        top: 14%;
+        box-shadow: 0px 10px 20px 0px #cacaca;
+        display: flex;
+        justify-content: start;
+    }
+
+    .nav-list{
+        
+        list-style-type: none !important;
+    }
+
+    li a{
+        text-decoration: none;
+        color: #000;
+    }
+
+    a{
+        margin-left: 2px;
+    }
+
+    img{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: -5px;
+    }
+
+
+    .contenedor-home, .contenedor-movimientos, 
+    .contenedor-registro, .contenedor-estadisticas,
+    .contenedor-stock, .contenedor-usuarios{
+        position: absolute;
+        margin-left: -32px;
+        /*border: 1px solid black;*/
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: 2%;
+    }
+
+    .contenedor-home{
+        height: 10%;
+
+    }
+
+    .contenedor-movimientos{
+        margin-top: 10% ;
+        height:10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-registro{
+        margin-top: 20%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-estadisticas{
+        margin-top: 30%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contenedor-stock{
+        margin-top: 40%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        border-right: 2px solid #bdbdbd;
+    }
+
+    .contenedor-usuarios{
+        margin-top: 50%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-general{
+        height: 60%;
+        width: 100%;
+    }
+}
+
+.contenedor-home:hover, .contenedor-estadisticas:hover,
+.contenedor-movimientos:hover, .contenedor-registro:hover,
+.contenedor-stock:hover, .contenedor-usuarios:hover{
+    background-color: #efefef;
+    border-bottom: 1px solid  #292929;   
+}
+
+/*stock*/
+
+.auto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rem;
+    padding: 8rem;
+}
+
+.inventory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    width: 100%;
+}
+
+.stock-h2{
+    display: flex;
+    justify-content: space-between;
+    background: #f0f0f0;
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+#addProductBtn{
+    border: none;
+    padding: 0.8rem;
+    background: #0a8005;
+    color: #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0a8005;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* .footer-pagination{
+    display: flex;
+    
+    flex-direction: column;
+}
+*/
+/* Estilos para el modal */
+
+.modal {
+    top: 50px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(54, 13, 13, 0.3);
+  }
+  
+  .modal-content {
+    background-color: #5ed128;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+@media screen and (min-width: 901px) and (max-width: 1200px){
+
+    
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px){
+
+}

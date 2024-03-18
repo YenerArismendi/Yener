@@ -29,7 +29,7 @@ $result = $conexionsql->query($sql);
 
 if($result->num_rows > 0 ){
     $row = $result->fetch_assoc();
-    $_SESSION["IDproducto"] = $row["ID_Producto"];
+    $_SESSION["IDproducto"] = $row["IDProducto"];
     $_SESSION["Nombre"] = $row["Nombre"];
     $_SESSION["stock"] = $row["stock"];   
     $_SESSION["PrecioUnidad"] = $row["PrecioUnidad"];
@@ -45,8 +45,6 @@ if($result->num_rows > 0 ){
 
 //almacenar datos para realizar operacion para el precio total 
 
-    $totalcompra;
-
         $totalcompra = $_POST["cantidad-sale"];
 
         $precioproductonumber = intval($precioproducto);
@@ -55,7 +53,7 @@ if($result->num_rows > 0 ){
 
         $totalproducto = $precioproductonumber * $totalcompranumber;
 
-    $totalStock = isset($_POST["stock-total"]) ? $_POST["stock-total"] : 0;
+        $totalStock = isset($_POST["stock-total"]) ? $_POST["stock-total"] : 0;
 
         $totalStockproducto = $totalstocknumber - $totalcompranumber;
 

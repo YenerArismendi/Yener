@@ -1,5 +1,7 @@
 <?php 
 
+session: star();
+
 include 'conexion.php';
 include 'entradaproducto.php';  
 

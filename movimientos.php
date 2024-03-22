@@ -63,7 +63,7 @@ if(empty($_SESSION["id"]) ){
     <?php
         include 'modulos/conexion.php';
         include 'modulos/entradaproducto.php';
-        //include 'modulos/registro_compra.php';
+        include 'modulos/registro_compra.php';
     ?>
     <!--Codigo para formulario de venta producto--> 
     

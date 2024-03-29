@@ -59,31 +59,68 @@ if(empty($_SESSION["id"]) ){
         </nav>
     </div>  
     
+   <?php
+ include 'modulos/conexion.php';
+
+   ?>
     <div class="auto">
 
-        <div id="myModal" class="modal">
-         
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <input type="text" id="productName" placeholder="Nombre del producto">
-              <input type="number" id="productQuantity" placeholder="Cantidad">
-              <input type="number" id="productPrice" placeholder="Precio">
-              <input type="number" id="productPrice" placeholder="Precio">
-              <input type="number" id="productPrice" placeholder="Precio">
-              <input type="number" id="productPrice" placeholder="Precio">
-              <button id="addProduct">Agregar</button>
-            </div>
-       
-          </div>
+     <div class="container" id="container">
+            <h2>no hay ningun movimientos en esto momentos.</h2>
+            <p>Desea hacer un movimiento ahora?</p>
+            <button id="add" onclick="mostrarModal()">Movimientos</button>
+          </div>   
 
-        
+ <?php
+          
+    ?>
     
-        <div class="stock-h2">
+    <div id="miModal" class="modal">
+        <form id="addProductForm">
+          <span onclick="cerrarModal()" class="close">&times;</span>
+          <p>Guardar inventario.</p>
+          <label for="id_producto">ID Producto:</label>
+          <input  type="text" id="id_producto" name="id_producto">
+      
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre">
+      
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" name="cantidad">
+      
+          <label for="precio_unitario">Precio U/N:</label>
+          <input type="number" id="precio_unitario" name="precio_unitario">
+      
+          <label for="almacen">Almacen:</label>
+          <input type="text" id="almacen" name="almacen">
+      
+          <label for="nivel_alerta">Nivel Alerta:</label>
+          <input type="number" id="nivel_alerta" name="nivel_alerta">
+      
+          <input type="submit" id="addProductBtn" onclick="cerrarModal()" value="Guardar">
+        </form>
+  
+      
+    </div>
+
+
+    <div class="stock-h2" id="ttable"> 
         <h4>Inventario de stock</h4>
         <div class="stock-left">
-        <a id="addProductBtn">Agregar Producto</a>
+        <a id="add" onclick="mostrarModal()">Agregar Producto</a>
+        <a id="deleteAllBtn">Eliminar Todos</a>
     </div>
+  
+    
+  
+  <!--  El modal --> 
+
 </div>
+
+    
+   
+
+  
     <div class="inventory">
         <table id="inventoryTable">
             <thead>
@@ -100,36 +137,182 @@ if(empty($_SESSION["id"]) ){
             <tbody>
             
                 
-                <!-- Aquí se agregarán los elementos dinámicamente -->
+            <!--   Aquí se agregarán los elementos dinámicamente --> 
             </tbody>
-            <tbody>
-                <td></td>
-                
-                <!-- Aquí se agregarán los elementos dinámicamente -->
-            </tbody>
+    
             
         </table>
-    <!--    <div class="footer-pagination">
-            <span>Showing 1 to 10 of 60 entries</span>
-            <div class="index-button">
-                <button>Previous</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>Next</button>
-            </div>
+
+    </div> 
+    <div class="pagination">
+            <button id="prevPageBtn">Anterior</button>
+            <!-- Aquí se agregarán los botones de página -->
+            <button id="nextPageBtn">Siguiente</button>
         </div>
-    -->
-    </div>
 </div>
 
+<script>
 
+document.addEventListener("DOMContentLoaded", function () {
+    const addProductForm = document.querySelector("#miModal form");
+    const inventoryTableBody = document.querySelector("#inventoryTable tbody");
+    const pageNumButtonsContainer = document.querySelector(".pagination");
+
+    const productsPerPage = 10;
+    let currentPage = 1;
+
+    // Agregar evento submit al formulario
+    addProductForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+        
+        // Obtener los valores de los campos de entrada
+        const productId = document.getElementById("id_producto").value;
+        const productName = document.getElementById("nombre").value;
+        const productQuantity = document.getElementById("cantidad").value;
+        const productPrice = document.getElementById("precio_unitario").value;
+        const productShop = document.getElementById("almacen").value;
+        const productAlertLevel = document.getElementById("nivel_alerta").value;
+
+        if (
+            productId &&
+            productName &&
+            productQuantity &&
+            productPrice &&
+            productShop &&
+            productAlertLevel
+        ) {
+            // Crear una nueva fila de tabla con los valores ingresados
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td>${productId}</td>
+                <td>${productName}</td>
+                <td>${productQuantity}</td>
+                <td>$${productPrice}</td>
+                <td>${productShop}</td>
+                <td>${productAlertLevel}</td>
+            `;
+        
+
+            // Mostrar la tabla
+            var ttable = document.getElementById("ttable");
+            ttable.style.display = "flex";
+            
+            var table = document.getElementById("inventoryTable");
+            table.style.display = "table";
+
+
+              // Ocultar contenedor principal
+              var container = document.getElementById("container");
+            container.style.display = "none";
+
+            // Ocultar contenedor modal
+            var modalContainer = document.getElementById("miModal");
+            modalContainer.style.display = "none";
+
+        } else {
+            alert("Por favor, complete todos los campos.");
+        }
+    });
+
+   
+    });
+
+
+
+    // Delete all rows
+var deleteAllBtn = document.getElementById("deleteAllBtn");
+deleteAllBtn.onclick = function() {
+  // Eliminar todas las filas de la tabla
+  var table = document.getElementById("inventoryTable").getElementsByTagName('tbody')[0];
+  table.innerHTML = '';
+
+  // oculta la fila de la tabla //
+  var table = document.getElementById("inventoryTable");
+  table.style.display = "none";
+      
+
+  // Mostrar el mensaje "Aún no has agregado ningún producto" y el botón "Agregar Producto"
+  var container = document.getElementById("container");
+  container.style.display = "block";
+
+  // Ocultar la tabla
+  var inventoryTable = document.getElementById("ttable");
+  inventoryTable.style.display = "none";
+
+  // Scroll hasta la parte superior del contenedor principal
+  container.scrollIntoView({ behavior: 'smooth' });
+};
+
+
+function updatePagination() {
+                const totalProducts = inventoryTableBody.children.length;
+                const totalPages = Math.ceil(totalProducts / productsPerPage);
+
+                pageNumButtonsContainer.innerHTML = "";
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageNumBtn = document.createElement("button");
+                    pageNumBtn.textContent = i;
+                    pageNumBtn.classList.add("pageNumBtn");
+                    pageNumBtn.addEventListener("click", function () {
+                        currentPage = i;
+                        updatePage();
+                    });
+                    pageNumButtonsContainer.appendChild(pageNumBtn);
+                }
+
+                updatePage();
+            }
+
+            function updatePage() {
+                const startIdx = (currentPage - 1) * productsPerPage;
+                const endIdx = startIdx + productsPerPage;
+                const rows = Array.from(inventoryTableBody.children);
+
+                rows.forEach((row, index) => {
+                    if (index >= startIdx && index < endIdx) {
+                        row.style.display = "";
+                    } else {
+                        row.style.display = "none";
+                    }
+                });
+            }
+
+            document.getElementById("prevPageBtn").addEventListener("click", function () {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updatePage();
+                }
+            });
+
+            document.getElementById("nextPageBtn").addEventListener("click", function () {
+                const totalProducts = inventoryTableBody.children.length;
+                const totalPages = Math.ceil(totalProducts / productsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updatePage();
+                }
+            });
+
+            updatePagination();
+
+
+</script>
   
 
 <script src="JS/stock.js"></script>
+
+<script>
+    // Función para mostrar el modal
+    function mostrarModal() {
+      document.getElementById("miModal").style.display = "flex";
+    }
+    
+    // Función para cerrar el modal
+    function cerrarModal() {
+      document.getElementById("miModal").style.display = "none";
+    }
+    </script>
 
 </body>
 </html>

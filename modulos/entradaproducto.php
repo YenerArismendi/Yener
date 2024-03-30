@@ -1,6 +1,6 @@
-<?php
+    <?php
 
-include 'modulos/conexion.php';
+//include 'conexion.php';
 
 //para completar campos al ingresar el id del comprador o cliente 
 
@@ -13,7 +13,7 @@ if($resultado->num_rows > 0){
     $row = $resultado->fetch_assoc();
     $_SESSION["ID_usuario"] = $row["ID_usuario"];
     $_SESSION["nombre_usuario"] = $row["nombre_usuario"];
-}else{
+}else{  
     echo '<script>Swal.fire({
         icon: "error",
         title: "Error",
@@ -38,14 +38,14 @@ if($result->num_rows > 0 ){
 }else{
     echo '<script>Swal.fire({
         icon: "error",
-        title: "Error",
+            title: "Error",
         text: "Producto no registrado!",
         });</script>';
 }
 
 //almacenar datos para realizar operacion para el precio total 
 
-        $totalcompra = $_POST["cantidad-sale"];
+        $totalcompra = isset($_POST["cantidad-sale"]) ? $_POST["cantidad-sale"] : 0;
 
         $precioproductonumber = intval($precioproducto);
         $totalcompranumber = intval($totalcompra);

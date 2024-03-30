@@ -62,7 +62,6 @@ if(empty($_SESSION["id"]) ){
     <body>  
     <?php
         include 'modulos/conexion.php';
-        include 'modulos/entradaproducto.php';
         include 'modulos/registro_compra.php';
     ?>
     <!--Codigo para formulario de venta producto--> 
@@ -74,37 +73,37 @@ if(empty($_SESSION["id"]) ){
                 <div class="id-nombreProducto">
                     <div class="id-producto">
                         <label for="id-producto" >ID producto</label>
-                        <input name="idproducto" type="text"  class="form-control"  id="id-producto"  value="<?php echo $_SESSION["IDproducto"] = isset($_POST["idproducto"]) ? $_POST["idproducto"] : 0;?>">
+                        <input name="idproducto" type="text"  class="form-control"  id="id-producto" value="<?php echo $idproducto?>" >
                     </div>
                     <div class="nombre-producto">
                         <label for="nombre-producto">Nombre del producto</label>
-                        <input name="nombre-producto" type="text" class="form-control"id="nombre-producto" value="<?php echo $_SESSION["Nombre"]; ?>">
+                        <input name="nombre-producto" type="text" class="form-control"id="nombre-producto" value="<?php echo $NombreProducto?>" >
                     </div>
                 </div>
                 <div class="fecha-cantidadStock">
                     <div class="precio-unidad">
                         <label for="precio-unit">Precio por unidad</label><br> 
-                        <input name="precio-unit" type="text" class="form-control" id="precio-unit" value="<?php echo $_SESSION["PrecioUnidad"];?>">
+                        <input name="precio-unit" type="text" class="form-control" id="precio-unit" value="<?php echo $PrecioUnidad?>">
                     </div>
                     <div class="cantidad-stock">
                         <label for="cantidad-stock">Stok</label><br> 
-                        <input name="cantidadStock" type="text" class="form-control" id="advertencias-producto" value="<?php echo $_SESSION["stock"]; ?>">
+                        <input name="cantidadStock" type="text" class="form-control" id="advertencias-producto" value="<?php echo $StockActual?>">
                     </div>  
                 </div>
                 <div class="id-nombre-comprador">
                     <div class="id-comprador">
                         <label for="id-buyer">ID comprador</label>
-                        <input name="id-comprador" type="text" class="form-control" id="id-buyer" value="<?php echo $_SESSION["ID_usuario"] = isset($_POST["id-comprador"]) ? $_POST["id-comprador"] : 0;?>">
+                        <input name="id-comprador" type="text" class="form-control" id="id-buyer" value="<?php echo $IdComprador?>">
                     </div>
                     <div class="nombre-comprador">
                         <label for="nombre-buyer">Nombre comprador</label><br> 
-                        <input name="nombre-buyer" type="text" class="form-control" id="nombre-buyer" value="<?php echo $_SESSION["nombre_usuario"];?>">
+                        <input name="nombre-buyer" type="text" class="form-control" id="nombre-buyer" value="<?php echo $NombreComprador?>">
                     </div>  
                 </div>
                 <div class="cantidad-preciouni">
                     <div class="cantidad-venta">
                         <label for="cantidad-sale">Cantidad</label>
-                        <input name="cantidad-sale" type="number" class="form-control" id="cantidad-sale" value="<?php echo $totalcompra = isset($_POST["cantidad-sale"]) ? $_POST["cantidad-sale"] : 0;?>">
+                        <input name="cantidad-sale" type="number" class="form-control" id="cantidad-sale" value="<?php echo $CantidadCompra?>">
                     </div>
                     <div class="fecha-venta">
                         <label for="date-venta">Fecha de venta</label>
@@ -114,14 +113,14 @@ if(empty($_SESSION["id"]) ){
                 <div class="preciototal-stocktotal-botoncalcular">
                     <div class="precio-total">
                         <label for="total-price">Precio total</label>
-                        <input name="precioTotal" type="text" class="form-control" id="id-buyer" value="<?php echo $totalproducto; ?>">
+                        <input name="precioTotal" type="text" class="form-control" id="id-buyer" value="<?php echo  $PrecioFinal?>">
                     </div>
                     <!--<<div class="btn-calcular">
                         <input type="submit" class="btn btn-danger" value="Total" name="btncalcular">
                     </div>-->
                     <div class="stock-total">
                         <label for="stock-total">Stock total</label><br> 
-                        <input name="stock-total" type="text"   class="form-control" id="stock-total" value="<?php echo $totalStockproducto; ?>">
+                        <input name="stock-total" type="text"   class="form-control" id="stock-total" value="<?php echo $StockFinal?>">
                     </div>  
                 </div>
                 <div class="descripcion-movimientos-ingresos">
@@ -138,7 +137,7 @@ if(empty($_SESSION["id"]) ){
 
     <!--Codigo para formulario para entrada de productos -->
 
-    <button id="salidadeproductos" onclick="ocultar();">Salida de productos</button>
+    <button id="salidadeproductos" onclick="ocultar();">Entrada de productos</button>
     <div id="contenedor-padre-salida-productos">
         <div class="contenedor-hijo-salida-productos    ">
             <form method="POST">

@@ -11,18 +11,15 @@ if(empty($_SESSION["id"]) ){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palm Oil</title>
-    <link rel="stylesheet" href="CSS/estadistica.css">
+    <link rel="stylesheet" href="CSS/stock.css">
     <link rel="icon" type="image/png" href="IMAGENES/logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <script src="sweetalert/dist/sweetalert2.all.js"></script>
     <script src="sweetalert/dist/sweetalert2.all.min.js"></script>
     <script src="sweetalert/jquery-3.6.0.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="JS/ocultarmodulos.js"></script>
-    <script src="JS/cambiopaginas.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
 </head>
+<body>
     <div class="encabezado">
         <div class="logo-titulo">
             <img src="IMAGENES/logo.png" class="logo" alt="fondo">
@@ -40,13 +37,13 @@ if(empty($_SESSION["id"]) ){
     <div class="lista-principal">
         <nav class="nav-general">
             <ul class="nav-list">
-                <div class="contenedor-home"  onclick="window.location.href='Principal.php'">
+                <div class="contenedor-home">
                     <li><img src="bootstrap/iconos/house-fill.svg" alt="home"><a href="#">Inicio</a></li>
                 </div><br>
-                <div class="contenedor-movimientos" onclick="window.location.href='movimientos.php'">
-                    <li><img src="bootstrap/iconos/clipboard-data-fill.svg" alt="movimientos"><a href="#">Movimientos</a></li>
+                <div class="contenedor-movimientos">
+                    <li><img src="bootstrap/iconos/clipboard-data-fill.svg" alt="movimientos"><a href="movimientos.php">Movimientos</a></li>
                 </div><br>    
-                <div class="contenedor-registro" onclick="window.location.href='registrousuario.php'">
+                <div class="contenedor-registro">
                     <li><img src="bootstrap/iconos/journal-plus.svg" alt="registro"><a href="#">Registro</a></li>
                 </div><br>
                 <div class="contenedor-estadisticas">
@@ -60,113 +57,138 @@ if(empty($_SESSION["id"]) ){
                 </div>
             </ul>
         </nav>
-    </div>
-    <body>  
-    <?php
-        include 'modulos/conexion.php';
-        include 'modulos/ventaprocuto.php';
-    ?>
-    <!--Codigo para formulario de venta producto--> 
-    
-    <button id="entradadeproductos" onclick="mostrar();">Entrada de productos</button>
-    <div id="contenedor-padre-ingreso-productos">
-        <div class="contenedor-hijo-ingreso-productos">
-            <form method="POST">
-                <div class="container">
-                    <div class="chart-container">
-                        <canvas id="graficoProductos1" width="500" height="400"></canvas>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="graficoProductos2"width="500" height="400"></canvas>
-                    </div>
-                </div>
-                
-            </form> 
-        </div>    
     </div>  
+    
+   <?php
+ include 'modulos/conexion.php';
 
-    <!--Codigo para formulario para entrada de productos -->
+   ?>
+    <div class="auto">
 
-    <button id="salidadeproductos" onclick="ocultar();">Salida de productos</button>
-    <div id="contenedor-padre-salida-productos">
-        <div class="contenedor-hijo-salida-productos    ">
-            <form method="POST">
-              
-            </form>
+   <!--  <div class="container" id="container">
+            <h2>no hay ningun movimientos en esto momentos.</h2>
+            <p>Desea hacer un movimiento ahora?</p>
+            <button id="add" onclick="mostrarModal()">Movimientos</button>
+          </div>   
+-->
+<?php
+    // Configuración de la conexión a la base de datos
+    $servername = "localhost"; // Cambia esto si tu servidor de base de datos está en otro lugar
+    $username = "root"; // Nombre de usuario de la base de datos (por defecto es 'root' en muchos sistemas)
+    $password = ""; // Contraseña de la base de datos (deja esto en blanco si no tiene contraseña)
+    $dbname = "formulario_estadistica"; // Nombre de la base de datos creada
+
+    // Conexión a la base de datos
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
+    }
+
+    // Verificar si se ha enviado el formulario y procesar los datos
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Obtener los datos del formulario
+        $id_producto = $_POST['id_producto'];
+        $nombre_producto = $_POST['nombre_producto'];
+        $precio_unidad = $_POST['precio_unidad'];
+        $stock = $_POST['stock'];
+        $id_comprador = $_POST['id_comprador'];
+        $nombre_comprador = $_POST['nombre_comprador'];
+        $cantidad = $_POST['cantidad'];
+        $fecha_venta = $_POST['fecha_venta'];
+        $precio_total = $_POST['precio_total'];
+        $stock_total = $_POST['stock_total'];
+
+        // Insertar los datos en la base de datos
+        $sql = "INSERT INTO estadisticas (id_producto, nombre_producto, precio_unidad, stock, id_comprador, nombre_comprador, cantidad, fecha_venta, precio_total, stock_total)
+        VALUES ('$id_producto', '$nombre_producto', '$precio_unidad', '$stock', '$id_comprador', '$nombre_comprador', '$cantidad', '$fecha_venta', '$precio_total', '$stock_total')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Datos guardados correctamente.";
+        } else {
+            echo "Error al guardar los datos: " . $sql . "<br>" . $conn->error;
+        }
+    }
+
+    // Obtener los datos de la tabla de la base de datos
+    $sql_select = "SELECT * FROM estadisticas";
+    $result = $conn->query($sql_select);
+
+    // Mostrar los datos en una tabla HTML con estilo
+    echo "<table class='styled-table'>";
+    echo "<thead><tr><th>ID Producto</th><th>Nombre del Producto</th><th>Precio por Unidad</th><th>Stock</th><th>ID Comprador</th><th>Nombre Comprador</th><th>Cantidad</th><th>Fecha de Venta</th><th>Precio Total</th><th>Stock Total</th></tr></thead>";
+    echo "<tbody>";
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "<tr><td>".$row["id_producto"]."</td><td>".$row["nombre_producto"]."</td><td>".$row["precio_unidad"]."</td><td>".$row["stock"]."</td><td>".$row["id_comprador"]."</td><td>".$row["nombre_comprador"]."</td><td>".$row["cantidad"]."</td><td>".$row["fecha_venta"]."</td><td>".$row["precio_total"]."</td><td>".$row["stock_total"]."</td></tr>";
+        }
+    } else {
+        echo "<tr><td colspan='10'>0 resultados</td></tr>";
+    }
+    echo "</tbody>";
+    echo "</table>";
+
+    // Cerrar la conexión
+    $conn->close();
+    ?>
+    
+
+
+    <div class="stock-h2" id="ttable"> 
+        <h4>Inventario de stock</h4>
+        <div class="stock-left">
+        <a id="add" onclick="mostrarModal()">o</a>
+        <a id="deleteAllBtn">Eliminar</a>
+    </div>
+  
+    
+
+</div>
+
+
+   
+
+  
+  <!--  <div class="inventory">
+        <table id="inventoryTable">
+            <thead>
+                <tr>
+                    <th>ID Producto</th>
+                    <th>Nombre del producto</th>
+                    <th>Precio por unidad</th>
+                    <th>Stock</th>
+                    <th>ID comprador</th>
+                    <th>Nombre comprador</th>
+                    <th>Cantidad</th>
+                    <th>Fecha de venta</th>
+                    <th>Precio total</th>
+                    <th>Stock total</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                
+          Aquí se agregarán los elementos dinámicamente 
+            </tbody>
+    
+            
+        </table>
+
+    </div> 
+    <div class="pagination">
+            <button id="prevPageBtn">Anterior</button>
+            Aquí se agregarán los botones de página 
+            <button id="nextPageBtn">Siguiente</button>
         </div>
-    </div>    
+</div>
 
-    <script>
-           // Datos de ejemplo (puedes reemplazarlos con tus propios datos)
-   var productos = ['Producto 1', 'Producto 2', 'Producto 3'];
-   var cantidades = [10, 15, 20];
+-->
 
-   // Configuración del gráfico
-   var ctx = document.getElementById('graficoProductos1').getContext('2d');
-   var myChart = new Chart(ctx, {
-       type: 'bar',
-       data: {
-           labels: productos,
-           datasets: [{
-               label: 'Cantidad',
-               data: cantidades,
-               backgroundColor: [
-                   'rgba(255, 0, 0, 0.6)',
-                   'rgba(0, 152, 70, 0.6)',
-                   'rgba(00, 0, 255, 0.6)'
-               ],
-               borderColor: [
-                   'rgba(255, 99, 132, 1)',
-                   'rgba(54, 162, 235, 1)',
-                   'rgba(255, 206, 86, 1)'
-               ],
-               borderWidth: 1
-           }]
-       },
-       options: {
-           responsive: false,
-           legend: {
-               position: 'right',
-           }
-       }
-       
-   });
 
-    // Datos de ejemplo (puedes reemplazarlos con tus propios datos)
-    var productos = ['Producto 1', 'Producto 2', 'Producto 3'];
-   var cantidades = [10, 15, 20];
+<script src="JS/movimiento-y-estadistica.js"></script>
 
-   // Configuración del gráfico
-   var ctx = document.getElementById('graficoProductos2').getContext('2d');
-   var myChart = new Chart(ctx, {
-       type: 'pie',
-       data: {
-           labels: productos,
-           datasets: [{
-               label: 'Cantidad',
-               data: cantidades,
-               backgroundColor: [
-                   'rgba(255, 0, 0, 0.6)',
-                   'rgba(0, 152, 70, 0.6)',
-                   'rgba(00, 0, 255, 0.6)'
-               ],
-               borderColor: [
-                   'rgba(255, 99, 132, 1)',
-                   'rgba(54, 162, 235, 1)',
-                   'rgba(255, 206, 86, 1)'
-               ],
-               borderWidth: 1
-           }]
-       },
-       options: {
-           responsive: false,
-           legend: {
-               position: 'left',
-           }
-       }
-       
-   });
-    </script>
+
 
 </body>
 </html>

@@ -11,7 +11,7 @@ if(empty($_SESSION["id"]) ){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palm Oil</title>
-    <link rel="stylesheet" href="CSS/stock.css">
+    <link rel="stylesheet" href="CSS/estadistica.css">
     <link rel="icon" type="image/png" href="IMAGENES/logo.png">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <script src="sweetalert/dist/sweetalert2.all.js"></script>

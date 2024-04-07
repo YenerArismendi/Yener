@@ -19,7 +19,8 @@ if(empty($_SESSION["id"]) ){
     <script src="sweetalert/jquery-3.6.0.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="JS/ocultarmodulos.js"></script>
-    <script src="JS/cambiopaginas.js"></script>
+    <script src="JS/ocultarmodulos.js"></script>
+    <script src="JS/recargar-pagina-compra.js"></script>
 </head>
     <div class="encabezado">
         <div class="logo-titulo">
@@ -69,7 +70,7 @@ if(empty($_SESSION["id"]) ){
     <button id="entradadeproductos" onclick="mostrar();">Venta de productos</button>
     <div id="contenedor-padre-ingreso-productos">
         <div class="contenedor-hijo-ingreso-productos">
-            <form method="POST">
+            <form method="POST" id="formulario-venta">
                 <div class="id-nombreProducto">
                     <div class="id-producto">
                         <label for="id-producto" >ID producto</label>
@@ -81,7 +82,7 @@ if(empty($_SESSION["id"]) ){
                     </div>
                 </div>
                 <div class="fecha-cantidadStock">
-                    <div class="precio-unidad">
+                    <div class="precio-unidad"> 
                         <label for="precio-unit">Precio por unidad</label><br> 
                         <input name="precio-unit" type="text" class="form-control" id="precio-unit" value="<?php echo $PrecioUnidad?>">
                     </div>
@@ -107,7 +108,7 @@ if(empty($_SESSION["id"]) ){
                     </div>
                     <div class="fecha-venta">
                         <label for="date-venta">Fecha de venta</label>
-                        <input name="fecha-producto" type="date" class="form-control" id="fecha-creacion">
+                        <input name="fecha-producto" type="date" class="form-control" id="fecha-producto">
                     </div>  
                 </div>
                 <div class="preciototal-stocktotal-botoncalcular">
@@ -128,16 +129,17 @@ if(empty($_SESSION["id"]) ){
                     <textarea name="descripcion-movimiento-ingreso" class="form-control" id="descripcion-ingresos" cols="50" rows="5"></textarea>
                 </div>
                 <div class="botones-registro-limpiar">
-                    <input class="btn btn-outline-success" type="submit" name="registrarProducto" value="Registrar">   
-                    <input type="submit" class="btn btn-outline-info" value="Limpiar" name="limpiar">
+                    <input class="btn btn-outline-success" type="submit" name="registrarProducto" value="Registrar" id="recargar-envio">   
+                    <input type="button" class="btn btn-outline-info" value="Limpiar" name="limpiar" onclick="limpiarformulario()">
                 </div>
             </form> 
         </div>    
     </div>  
-
     <!--Codigo para formulario para entrada de productos -->
 
-    <button id="salidadeproductos" onclick="ocultar();">Entrada de productos</button>
+    <button id="salidadeproductos" onclick="ocultar();">Entrada de productos
+
+</button>
     <div id="contenedor-padre-salida-productos">
         <div class="contenedor-hijo-salida-productos    ">
             <form method="POST">

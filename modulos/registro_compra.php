@@ -17,8 +17,6 @@ include 'conexion.php';
 
     //extraer datos de la bd para el autocompletado
 
-
-
     $sql = "SELECT * FROM producto WHERE IDProducto = $idproducto";
     $resultadoproducto = $conexionsql->query($sql);
 
@@ -59,11 +57,7 @@ include 'conexion.php';
 
     if(!empty($_POST["registrarProducto"])){
     if(empty($_POST["fecha-producto"]) or empty($_POST["descripcion-movimiento-ingreso"])){
-        echo'<script>Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Ingrese todos los datos solicitados!",
-            });</script>';
+        //se deja en blanco por error en alerta 
     }else{
         //almacenamiento de datos solicitados 
 
@@ -87,6 +81,6 @@ include 'conexion.php';
 
         
     }
-}
+}   
 
 ?>

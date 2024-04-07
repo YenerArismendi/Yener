@@ -139,7 +139,7 @@ h1{
         display: flex;
         align-items: center;
         cursor: pointer;
-        
+
     }
 
     .contenedor-registro{
@@ -158,6 +158,7 @@ h1{
         cursor: pointer;
         border-right: 3px solid #bdbdbd;
         background-color: #efefef;
+
     }
 
     .contenedor-stock{
@@ -165,7 +166,7 @@ h1{
         height: 10%;
         display: flex;
         align-items: center;
-        cursor: pointer
+        cursor: pointer;
     }
 
     .contenedor-usuarios{
@@ -186,93 +187,169 @@ h1{
     .contenedor-stock:hover, .contenedor-usuarios:hover{
         background-color: #efefef;  
     }
-
-    /*estilos para los contenedores de los formularios de movimientos*/
-
-    #entradadeproductos{
-        position: absolute;
-        top: 17%;
-        left: 18%;
-        height: 6%;
-        width: 15%;
-        border: none;
-        background-color: #0a8005;
-        color:  #fff;
-    } 
-
-    #salidadeproductos{
-        position: absolute;
-        top: 17.8%;
-        left: 32%;
-        height: 5.3%;
-        width: 15%;
-        border: none;
-        color: white;
-        opacity: .3;
-        background-color: #0a8005;
-    }
-
-    #contenedor-padre-ingreso-productos{
-        border: 1px solid #fff;
-        box-shadow: 0px 10px 20px 0px #cacaca;
-        border-bottom: 0px 5px 5px 5px;
-        position: absolute;
-        display: block;
-        left: 18%;
-        top: 23.14%;
-        height: 73%;
-        width: 80%;
-        overflow: scroll;
-    }
-
-    #contenedor-padre-salida-productos{
-        border: 1px solid #fff;
-        box-shadow: 0px 10px 20px 0px #cacaca;
-        border-bottom: 0px 5px 5px 5px;
-        position: absolute; 
-        display: none;
-        left: 18%;
-        top: 23.14%;
-        height: 73%;
-        width: 80%;
-    }
-
-    /*Estilos para grafico*/
-
-    .container{
-        display: flex;
-    }
-
-    .chart-container {
-        flex: 1;
-        max-width: 50%;
-        margin: 0.7rem;
-        margin-top: 2rem;
-        background: #ced3cd;
-        border-radius: 10px;
-    }
-    
-
-    /*estilos para botones de formulario entrada productos*/
-
-    .botones-registro-limpiar{
-        position: absolute;
-        top: 120%;
-        left: 2%;
-        margin-bottom: 5%;
-        height: 10%;
-    }
-
-    /*estilos para formulario de salida de prodcutos*/
-
-    
-
 }
-@media screen and (min-width: 901px) and (max-width: 1200px){
+/*stock*/
 
+.auto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8rem;
+    padding: 7rem;
+    width: 98%;
+}
+
+.inventory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
     
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px){
+.stock-h2{
+    display: flex;
+    justify-content: space-between;
+    background: #f0f0f0;
+    padding: 1rem;
+    padding-top: 1rem;
 
 }
+
+#add, #deleteAllBtn{
+    border: none;
+    padding: 0.7rem;
+    background: #0a8005;
+    color: #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.7rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0a8005;
+    color: white;
+    font-size: 0.8rem;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* pagination stylo */
+   .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pagination button:hover {
+            background-color: #45a049;
+        }
+
+        .pageNumBtn.active {
+            background-color: #45a049;
+        }
+
+    
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  
+
+  #ttable{
+    display: none;
+  }
+
+  #inventoryTable{
+    display: none;
+  }
+
+/* Estilos para el modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    justify-content: center;
+  }
+  
+  form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 50rem;
+    margin: auto;
+    height: 35rem;
+}
+
+.modal p{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.close{
+    display: flex;
+    justify-content: end;
+    color: red;
+    font-size: 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.1rem;
+}
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.4rem;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+}
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.6rem;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+

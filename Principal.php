@@ -46,11 +46,11 @@ if(empty($_SESSION["id"]) ){
                 <div class="contenedor-registro" onclick="window.location.href='registrousuario.php'">
                     <li><img src="bootstrap/iconos/journal-plus.svg" alt="registro"><a href="registrousuario.php">Registro</a></li>
                 </div><br>
-                <div class="contenedor-estadisticas">
-                    <li><img src="bootstrap/iconos/graph-up-arrow.svg" alt="estadisticas"><a href="#">Estadisticas</a></li>
+                <div class="contenedor-estadisticas" onclick="windows.location.href='estadistica.php'">
+                    <li><img src="bootstrap/iconos/graph-up-arrow.svg" alt="estadisticas"><a href="estadistica.php">Estadisticas</a></li>
                 </div><br>
                 <div class="contenedor-stock">
-                    <li><img src="bootstrap/iconos/box-seam-fill.svg" alt="stock"><a href="#">Stock</a></li>
+                    <li><img src="bootstrap/iconos/box-seam-fill.svg" alt="stock"><a href="Stock.php">Stock</a></li>
                 </div><br>
                 <div class="contenedor-usuarios">
                     <li><img src="bootstrap/iconos/person-square.svg" alt="usuarios"><a href="#">Usuarios</a></li>

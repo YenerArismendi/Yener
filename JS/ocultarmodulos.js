@@ -1,5 +1,5 @@
 
-//Formulario registro de productos y proveedores 
+//codigo para el modulo de registro 
 
 function ocultar(){
     document.getElementById('contenedor-padre-productos').style.display= 'none';
@@ -51,4 +51,30 @@ function ocultarultimo(){
     document.getElementById('proveedores').style.top='17.8%';
 }
 
-    
+//codigo para ocultar modulos de movimientos 
+
+function ocultarcompra(){
+    document.getElementById('contenedor-padre-ingreso-productos').style.display= 'none';
+    document.getElementById('contenedor-padre-salida-productos').style.display = 'block';
+    document.getElementById('compraProducto').style.backgroundColor='green';
+    document.getElementById('compraProducto').style.color='white';
+    document.getElementById('compraProducto').style.opacity='1';
+    document.getElementById('compraProducto').style.height='6%';
+    document.getElementById('compraProducto').style.top='17%';
+    document.getElementById('ventaProducto').style.opacity='.3';
+    document.getElementById('ventaProducto').style.height='5.3%';
+    document.getElementById('ventaProducto').style.top='17.8%';
+}
+
+function ocultarventa(){
+    document.getElementById('contenedor-padre-ingreso-productos').style.display= 'block';
+    document.getElementById('contenedor-padre-salida-productos').style.display = 'none ';
+    document.getElementById('ventaProducto').style.backgroundColor='green';
+    document.getElementById('ventaProducto').style.color='white';
+    document.getElementById('ventaProducto').style.opacity='1';
+    document.getElementById('ventaProducto').style.height='6%';
+    document.getElementById('ventaProducto').style.top='17%';
+    document.getElementById('compraProducto').style.opacity='.3';
+    document.getElementById('compraProducto').style.height='5.3%';
+    document.getElementById('compraProducto').style.top='17.8%';
+}

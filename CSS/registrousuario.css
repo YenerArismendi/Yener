@@ -221,6 +221,7 @@ h1{
         top: 23.14%;
         height: 73%;
         width: 80%;
+        overflow: scroll;
     }
 
     #contenedor-padre-proveedores{
@@ -304,8 +305,9 @@ h1{
 
     .botones-registro-eliminar-modificar{
         position: absolute;
-        top: 87%;
+        top: 100%;
         left: 2%;
+        margin-bottom: 5%;
     }
 
     /*estilos para formulario de proveedores*/

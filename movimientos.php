@@ -19,7 +19,6 @@ if(empty($_SESSION["id"]) ){
     <script src="sweetalert/jquery-3.6.0.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="JS/ocultarmodulos.js"></script>
-    <script src="JS/ocultarmodulos.js"></script>
     <script src="JS/recargar-pagina-compra.js"></script>
 </head>
     <div class="encabezado">
@@ -63,11 +62,12 @@ if(empty($_SESSION["id"]) ){
     <body>  
     <?php
         include 'modulos/conexion.php';
-        include 'modulos/registro_compra.php';
+        include 'modulos/registro_venta.php';
+        include 'modulos/compra-producto.php';
     ?>
     <!--Codigo para formulario de venta producto--> 
     
-    <button id="entradadeproductos" onclick="mostrar();">Venta de productos</button>
+    <button id="ventaProducto" onclick="ocultarventa();">Venta de productos</button>
     <div id="contenedor-padre-ingreso-productos">
         <div class="contenedor-hijo-ingreso-productos">
             <form method="POST" id="formulario-venta">
@@ -135,59 +135,52 @@ if(empty($_SESSION["id"]) ){
             </form> 
         </div>    
     </div>  
-    <!--Codigo para formulario para entrada de productos -->
+    <!--Codigo para formulario para compra de productos -->
 
-    <button id="salidadeproductos" onclick="ocultar();">Entrada de productos
-
-</button>
+    <button id="compraProducto" onclick="ocultarcompra();">Ingreso de producto</button>
     <div id="contenedor-padre-salida-productos">
-        <div class="contenedor-hijo-salida-productos    ">
+        <div class="contenedor-hijo-salida-productos">
             <form method="POST">
-                <div class="nombre-identificacion">
-                    <div class="nombre-proveedor">
-                        <label for="nombre" >Nombre del producto</label>
-                        <input type="text" name="nombre-proveedor" class="form-control" id="nombre-proveedor">
+                <div class="idProducto-nonbreProducto">
+                    <div class="idproductoCompra">
+                        <label for="id-producto-compra">ID producto</label>
+                        <input type="text" name="idProductoCompra" class="form-control" id="idCompraproducto" value="<?php echo $idproductocompra?>">
                     </div>
-                    <div class="identificacion-numero">
-                        <label for="tipo-documento">identificacion</label>
-                        <input type="number" name="identificacion-proveedor" class="form-control">
-                    </div>
-                </div>
-                <div class="telefonos">
-                    <div class="telefono-celular">
-                        <label for="telefono">Telefono</label>
-                        <input type="number" name="telefono-celular" class="form-control" id="telefono">
-                    </div>
-                    <div class="telefono-fijo">
-                        <label for="fijo">Telefono fijo</label>
-                        <input type="number" name="telefono-fijo" class="form-control" id="telefono-fijo">
+                    <div class="nombre-producto-compra">
+                        <label for="nombre-producto-compra" >Nombre del producto</label>
+                        <input type="text" name="nombre-producto-compra" class="form-control" id="nombre-compra" value="<?php echo $NombreProducto?>">
                     </div>
                 </div>
-                <div class="correo-ciudad">
-                    <div class="correo">
-                        <label for="correo">Correo electronico</label>
-                        <input type="email" name="correo-proveedor" class="form-control" id="correo-electronico">
+                <div class="stockInicial-proveedorcompra">
+                    <div class="Stock-inicial">
+                        <label for="stock-inicial">Stock</label>
+                        <input type="text" name="stock-inicial" class="form-control">
                     </div>
-                    <div class="ciudad">
-                        <label for="ciudad">Ciudad</label>
-                        <input type="text" name="ciudad-proveedor" class="form-control" id="ciudad-residencia">
-                    </div>
-                </div>
-                <div class="direccion-barrio">
-                    <div class="direccion">
-                        <label for="direccion">Direccion</label>
-                        <input type="text" name="direccion-proveedor" class="form-control" id="direccion">
-                    </div>
-                    <div class="barrio">
-                        <label for="barrio">Barrio</label>
-                        <input type="text" name="barrio-proveedor" class="form-control" id="Barrio">
+                    <div class="proveedorcompra">
+                        <label for="proveedor">Proveedor</label>
+                        <input type="text" name="proveedor" class="form-control" id="proveedor">
                     </div>
                 </div>
-                <div class="descripcion-proveedor">
-                        <label for="descripcion">Descripción del proveedor</label>
-                        <textarea name="descripcion-movimiento-ingreso" class="form-control" id="descripcion-proveedor" cols="30" rows="4"></textarea>
+                <div class="trabajador-cargo">
+                    <label for="trabajadorcargo">Trabajador a cargo</label>
+                    <input type="text" name="trabajadorcargo" class="form-control" id="trabajadorCargo">
                 </div>
-                <div class="botones-registro">
+                
+                <div class="cantidadCompra-stocktotal">
+                    <div class="cantidad-compra">
+                        <label for="cantidadcompra">Cantidad</label>
+                        <input type="text" name="cantidadcompra" class="form-control" id="cantidadcompra">
+                    </div>
+                    <div class="Stock-total">
+                        <label for="stockTotal">Stock final</label>
+                        <input type="text" name="stocktotal" class="form-control" id="Stock-total">
+                    </div>
+                </div>
+                <div class="descripcion-compra">
+                        <label for="descripcioncomrpa">Descripción de la compra</label>
+                        <textarea name="descripcion-compra" class="form-control" id="descripcioncompra" cols="50" rows="4"></textarea>
+                </div>
+                <div class="botones-registro-compra">
                 <input type="submit" name="guardarProveedores"  class="btn btn-outline-success" value="Guardar">
                 <input type="sumit" name="limpiar" class="btn btn-outline-info" value="Limpiar">
                 </div>

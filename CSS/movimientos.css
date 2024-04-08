@@ -188,7 +188,7 @@ h1{
 
     /*estilos para los contenedores de los formularios de movimientos*/
 
-    #entradadeproductos{
+    #ventaProducto{
         position: absolute;
         top: 17%;
         left: 18%;
@@ -199,7 +199,7 @@ h1{
         color:  #fff;
     } 
 
-    #salidadeproductos{
+    #compraProducto{
         position: absolute;
         top: 17.8%;
         left: 32%;
@@ -255,12 +255,6 @@ h1{
         margin-top: 1%;
     }
 
-    .btn-calcular{
-        margin-right: 5%;
-        margin-top: 3.2%;
-
-    }
-
     .id-producto, .precio-unidad, .id-comprador, .cantidad-venta, .precio-total{
         margin-left: 2%;
     }
@@ -285,9 +279,47 @@ h1{
         height: 10%;
     }
 
-    /*estilos para formulario de ingreso de prodcutos*/
+    /*estilos para formulario de compra de prodcutos*/
 
-    
+    .idProducto-nonbreProducto, .stockInicial-proveedorcompra{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .idproductoCompra, .nombre-producto-compra, .Stock-inicial, .proveedorcompra, .trabajador-cargo,.descripcion-compra{
+        width: 45%;
+        margin-top: 1%;
+    }
+
+    .idproductoCompra, .trabajador-cargo, .Stock-inicial{
+        margin-left: 2%;
+    }
+
+    .nombre-producto-compra, .proveedorcompra{
+        margin-right: 2%;
+    }
+
+    .cantidadCompra-stocktotal{
+        display: flex;
+        position: absolute; 
+        top: 37.5%;
+        left: 53%;
+        justify-content: space-between;
+        width: 45%;
+        
+    }
+
+    .descripcion-compra{
+        margin-left: 2%;
+        margin-top: 1%;
+    }
+
+    .botones-registro-compra{
+        position: absolute;
+        margin-left: 2%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
 
 }
 @media screen and (min-width: 901px) and (max-width: 1200px){

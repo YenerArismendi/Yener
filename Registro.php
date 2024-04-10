@@ -34,7 +34,7 @@
             <input type="password" name="contraseña" placeholder="Contraseña"><br>
             <input type="password" name="contraseña2" placeholder="Confirmar Contraseña"><br>
             <label for="roles">Rol:</label>
-            <select name="roles" id="roles" >
+            <select name="roles" id="roles" class="form-select">
                 <option value="administrador">Administrador</option>
                 <option value="usuario">Usuario</option>
             </select><br>

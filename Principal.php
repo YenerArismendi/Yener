@@ -33,7 +33,7 @@ if(empty($_SESSION["id"]) ){
                 <a class="btn btn-danger" href="modulos/cerrarSesion.php">Cerrar sesion</a>
             </div>
         </div>
-    </div>
+    </div>  
     <div class="lista-principal">
         <nav class="nav-general">
             <ul class="nav-list">
@@ -58,6 +58,30 @@ if(empty($_SESSION["id"]) ){
             </ul>
         </nav>
     </div>
+    <div class="contenedor-redireccion-1">
+        <div class="movimientos-productos" onclik="">
+            <h3><strong>Movimientos</strong></h3>
+        </div>
+        <div class="registro-varios">
+            <h3><strong>Registro</strong></h3>
+        </div>
+    </div>
+    <div class="contenedor-redireccion-2">
+        <div class="estadisticas-enviar">
+            <h3><strong>Estadisticas</strong></h3>
+        </div>
+        <div class="stock-enviar">
+            <h3><strong>Stock</strong></h3>
+        </div>
+    </div>
+    <div class="contenedor-redireccion-3">
+        <div class="usuarios-registrado">
+            <h3><strong>Usuarios</strong></h3>
+        </div>
+    </div>
+    
+    
+    
 
 </body>
 </html>

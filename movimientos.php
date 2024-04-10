@@ -63,7 +63,7 @@ if(empty($_SESSION["id"]) ){
     <?php
         include 'modulos/conexion.php';
         include 'modulos/registro_venta.php';
-        include 'modulos/compra-producto.php';
+        //include 'modulos/compra-producto.php';
     ?>
     <!--Codigo para formulario de venta producto--> 
     
@@ -148,7 +148,7 @@ if(empty($_SESSION["id"]) ){
                     </div>
                     <div class="nombre-producto-compra">
                         <label for="nombre-producto-compra" >Nombre del producto</label>
-                        <input type="text" name="nombre-producto-compra" class="form-control" id="nombre-compra" value="<?php echo $NombreProducto?>">
+                        <input type="text" name="nombre-producto-compra" class="form-control" id="nombre-compra">
                     </div>
                 </div>
                 <div class="stockInicial-proveedorcompra">

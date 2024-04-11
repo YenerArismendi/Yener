@@ -4,8 +4,6 @@ if(empty($_SESSION["id"]) ){
     header("location: inicio_sesion.php");
 }
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +12,10 @@ if(empty($_SESSION["id"]) ){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palm Oil</title>
-    <link rel="stylesheet" href="http://localhost/h2/yener-main/CSS/estadistica.css">
+    <link rel="stylesheet" href="CSS/estadistica.css">
     
-    <link rel="icon" type="image/png" href="http://localhost/h2/yener-main/IMAGENES/logo.png">
-    <link rel="stylesheet" href="http://localhost/h2/yener-main/bootstrap/css/bootstrap.css">
+    <link rel="icon" type="image/png" href="IMAGENES/logo.png">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <script src="sweetalert/dist/sweetalert2.all.js"></script>
     <script src="sweetalert/dist/sweetalert2.all.min.js"></script>
     <script src="sweetalert/jquery-3.6.0.min.js"></script>

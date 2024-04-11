@@ -57,5 +57,25 @@ if(empty($_SESSION["id"]) ){
                 </div>
             </ul>
         </nav>
+    </div>
+    <div class="contenedor-extra">
+        <div class="siemprecontigo" >
+            <div class="contenedor-texto-contigo">
+                <img class="siemprecontigoimg" src="IMAGENES/siempre-contigo.jpg" alt="siempre contigo">
+                <h4><strong>Siempre contigo</strong></h4>
+                <p>Recuerda que tienes soporte para cualquier problema presenteado con el aplicatico
+                siempre nos tienes a tu servicio en horario laboral</p>
+            </div>
+            
+        </div>
+        <div class="tu-mejor-software">
+            <h4><strong>Tu mejor opción</strong></h4>
+            <p>Siempre pensando en las pymes para su facil accecibilidad, con funciones de control tanto como productos, usuarios, compradores y proveedores </p>
+        </div>
+        <div class="controla-tu-inventario">
+            <h4><strong>Controla de mejor forma tu inventario</strong></h4>
+            <p>Lleva un mejor control de todos tus productos, recuaerda que es tu dinero el que esta en juego!</p>
+        </div>
+    </div>
 </body>
 </html>

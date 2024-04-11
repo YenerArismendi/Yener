@@ -1,0 +1,389 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif !important;
+}
+
+html{
+    background-color: #fff;
+}
+
+.encabezado{
+    position: absolute;
+    background-color: #0a8005;
+    box-shadow: 0px 0px 20px 5px #cacaca;
+}
+
+.logo{
+    position: relative;
+    border-radius: 50%;
+}
+
+h1{
+    position: relative;
+    color: #fff;
+}
+
+
+
+.centro-perfil{
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    top: 17%;
+    left: 20%;
+  }
+
+
+.menu-perfil{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid  rgb( 0, 0, 0, 0.3);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-radius: 10px;
+}
+
+.menu-perfil-sidebar{
+  position: relative;
+  border-right: 1px solid rgb(0, 0, 0, 0.1);
+    width: 23%;
+    height: 100%;
+}
+
+.sidebar-perfil{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+
+    }
+.sidebar-perfil ul li{
+    list-style: none;
+    padding: 9%;
+    border-bottom: 1px solid  rgb( 0, 0, 0, 0.2);
+}    
+
+
+.sidebar-perfil ul li a{
+    color: rgb( 0, 0, 0, 0.5);
+    text-decoration: none;
+
+}
+
+
+
+
+.My-perfil{
+  position: absolute;
+  top: 0;
+  right: 0%;
+  width: 77%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+
+}
+
+::-webkit-crollbar-track{
+    background: #45A049;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#45A049, #0a8005);
+    border-radius: 10px;
+}
+
+
+.profile {
+  position: relative;
+  display: flex;
+  background: transparent;
+  justify-content: center;
+  height: 33%;
+  width: 100%;
+}
+
+.profile-image {
+  top: 5%;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid rgb( 0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+#image-input {
+  display: none;
+}
+
+#change-image-btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb( 0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#change-image-btn:hover {
+  background-color: #45A049;
+}
+
+
+.My-perfil-nombre{
+  position: absolute; 
+  top: 32%;
+  left: 5%;
+  display: grid;
+}
+
+
+.My-perfil-nombre{
+  color: rgb( 0, 0, 0, 0.7);
+  width: 70%;
+}
+
+.My-perfil-nombre label{
+  color: red;
+}
+
+.My-perfil-nombre input{
+  outline: none;
+  width: 100%;
+  height: 2rem;
+ }
+
+
+
+
+
+#country{
+  height: 2rem;
+  padding: 0;
+  
+}
+
+
+
+
+
+.button-perfil-aceptar{
+    position: absolute;
+    padding-bottom: 15px;
+    top: 115%;
+    display: flex;
+  }
+  
+  .button-perfil-aceptar button{
+    margin-left: 10%;
+    border: 2px solid #45A049;
+    background: #0a8005;
+    width: 100%;
+    cursor: pointer;
+    color: white;
+    border-radius: 8px;
+    transition: all 300ms;
+    padding: 10px 60px;
+      
+  }
+  
+
+  
+  
+  
+
+
+@media screen and (min-width: 1200px){
+
+    .encabezado{
+        height: 14vh;
+        width: 100%;
+    }
+
+    .logo{
+        height: 95%;
+        width: 9.5%;
+        margin-top: 0.9%;
+        margin-left: 1.9%;
+    }
+
+    .logo-titulo{
+        position: absolute;
+        height: 70%;
+        width: 50%;
+        display: flex;justify-content: initial;
+        top: 7%;
+    }
+        
+    h1{
+        margin-left: 1%;
+        font-size: 10vh !important;
+        font-weight: bold !important;
+    }
+
+    .nombre-usuario{
+        position: static;
+        background-color: #d0ffc7;
+        height: 84%;
+        width: auto;
+        top: 30%;
+        left: 60%;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center !important;
+        margin-right: 2%;
+    }
+
+    .cerrar-sesion{
+        position: relative;
+        width: auto;
+        left: auto;        
+    }
+    
+    .contenedor-cerrar-sesion{
+        position: absolute;
+        height: 50%;
+        width: 30%;
+        top: 20%;
+        left: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    /*estilos de menu pricipal*/
+
+    .lista-principal{
+        position: absolute;
+        border-right: #fff;
+        width: 17%;
+        height: 86%;
+        top: 14%;
+        box-shadow: 0px 10px 20px 0px #cacaca;
+        display: flex;
+        justify-content: start;
+    }
+
+    .nav-list{
+        
+        list-style-type: none !important;
+    }
+
+    li a{
+        text-decoration: none;
+        color: #000;
+    }
+
+    a{
+        margin-left: 2px;
+    }
+
+    img{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: -5px;
+    }
+
+
+    .contenedor-home, .contenedor-movimientos, 
+    .contenedor-registro, .contenedor-estadisticas,
+    .contenedor-stock, .contenedor-usuarios{
+        position: absolute;
+        margin-left: -32px;
+        /*border: 1px solid black;*/
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: 2%;
+    }
+
+    .contenedor-home{
+        height: 10%;
+    }
+
+    .contenedor-movimientos{
+        margin-top: 10% ;
+        height:10%;
+        display: flex;
+        align-items: center;
+        cursor: pointer
+    }
+
+    .contenedor-registro{
+        margin-top: 20%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;    
+    }
+
+    .contenedor-estadisticas{
+        margin-top: 30%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        cursor: pointer
+    }
+
+    .contenedor-stock{
+        margin-top: 40%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        cursor: pointer
+    }
+
+    .contenedor-usuarios{
+        margin-top: 50%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-right: 3px solid #bdbdbd;
+        background-color: #efefef;
+    }
+
+    .nav-general{
+        height: 60%;
+        width: 100%;
+    }
+}
+
+.contenedor-home:hover, .contenedor-estadisticas:hover,
+.contenedor-movimientos:hover, .contenedor-registro:hover,
+.contenedor-stock:hover, .contenedor-usuarios:hover{
+    background-color: #efefef;
+}
+
+
+@media screen and (min-width: 901px) and (max-width: 1200px){
+
+    
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px){
+
+}

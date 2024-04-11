@@ -47,7 +47,7 @@ if(empty($_SESSION["id"]) ){
                 <div class="contenedor-registro" onclick="window.location.href='registrousuario.php'">
                     <li><img src="bootstrap/iconos/journal-plus.svg" alt="registro"><a href="#">Registro</a></li>
                 </div><br>
-                <div class="contenedor-estadisticas" onclick="window.location.href='estadistica.php'">
+                <div class="contenedor-estadisticas" onclick="window.location.href='modulos/procesar.php'">
                     <li><img src="bootstrap/iconos/graph-up-arrow.svg" alt="estadisticas"><a href="estadistica.php">Estadisticas</a></li>
                 </div><br>
                 <div class="contenedor-stock">

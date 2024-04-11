@@ -195,7 +195,7 @@ h1{
     flex-direction: column;
     margin-left: 8rem;
     padding: 7rem;
-    width: 98%;
+    width: 90%;
 }
 
 .vent{
@@ -379,7 +379,6 @@ tr:hover {
 
  /* Estilos para el modal */
  .modal {
-    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -390,17 +389,41 @@ tr:hover {
     background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
-    background-color: #4b0909;
-    margin: 15% auto;
+
+.modales {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    margin: 0;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 37%;
+    border-radius: 10px;
+}
+
+.modales button{
+    margin-top: 0.6rem;
+    padding: 0.4rem;
+    color: #fff;
+    background: #0a8005;
+    border-radius: 2px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.modal button:hover{
+ box-shadow: 10px #0a8005;
 }
 
 .close{
     display: flex;
-    justify-content: end;
+  justify-content: end;
+
+
     color: red;
     font-size: 2rem;
     border-radius: 1rem;

@@ -14,10 +14,9 @@ if(empty($_SESSION["id"]) ){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palm Oil</title>
-    <link rel="stylesheet" href="http://localhost/h2/yener-main/CSS/estadistica.css">
-    
-    <link rel="icon" type="image/png" href="http://localhost/h2/yener-main/IMAGENES/logo.png">
-    <link rel="stylesheet" href="http://localhost/h2/yener-main/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost/proyecto/yener/CSS/estadistica.css">
+    <link rel="icon" type="image/png" href="http://localhost/proyecto/yener/IMAGENES/logo.png">
+    <link rel="stylesheet" href="http://localhost/proyecto/yener/bootstrap/css/bootstrap.css">
     <script src="sweetalert/dist/sweetalert2.all.js"></script>
     <script src="sweetalert/dist/sweetalert2.all.min.js"></script>
     <script src="sweetalert/jquery-3.6.0.min.js"></script>
@@ -26,7 +25,7 @@ if(empty($_SESSION["id"]) ){
 <body>
     <div class="encabezado">
         <div class="logo-titulo">
-            <img src="http://localhost/h2/yener-main/IMAGENES/logo.png" class="logo" alt="fondo">
+            <img src="http://localhost/proyecto/yener/IMAGENES/logo.png" class="logo" alt="fondo">
             <h1>Palm Oil</h1>
         </div>
         <div class="contenedor-cerrar-sesion">
@@ -34,7 +33,7 @@ if(empty($_SESSION["id"]) ){
                 <b class="negrilla">&nbsp;Bienvenido: <?php echo $_SESSION["nombre"]; ?> &nbsp;</b>
             </div>
             <div class="cerrar-sesion">
-                <a class="btn btn-danger" href="modulos/cerrarSesion.php">Cerrar sesion</a>
+                <a class="btn btn-danger" href="cerrarSesion.php">Cerrar sesion</a>
             </div>
         </div>
     </div>
@@ -42,22 +41,22 @@ if(empty($_SESSION["id"]) ){
         <nav class="nav-general">
             <ul class="nav-list">
                 <div class="contenedor-home">
-                    <li><img src="http://localhost/h2/yener-main/bootstrap/iconos/house-fill.svg" alt="home"><a href="#">Inicio</a></li>
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/house-fill.svg" alt="home"><a href="#">Inicio</a></li>
                 </div><br>
                 <div class="contenedor-movimientos">
-                    <li><img src="http://localhost/h2/yener-main/bootstrap/iconos/clipboard-data-fill.svg" alt="movimientos"><a href="../movimientos.php">Movimientos</a></li>
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/clipboard-data-fill.svg" alt="movimientos"><a href="../movimientos.php">Movimientos</a></li>
                 </div><br>    
                 <div class="contenedor-registro">
-                    <li><img src="http://localhost/h2/yener-main/bootstrap/iconos/journal-plus.svg" alt="registro"><a href="../principal.php">Registro</a></li>
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/journal-plus.svg" alt="registro"><a href="../principal.php">Registro</a></li>
                 </div><br>
                 <div class="contenedor-estadisticas">
-                    <li><img src="http://localhost/h2/yener-main/bootstrap/iconos/graph-up-arrow.svg" alt="estadisticas"><a href="procesar.php">Estadisticas</a></li>
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/graph-up-arrow.svg" alt="estadisticas"><a href="procesar.php">Estadisticas</a></li>
                 </div><br>
                 <div class="contenedor-stock">
-                    <li><img src="http://localhost/h2/yener-main/bootstrap/iconos/box-seam-fill.svg" alt="stock"><a href="#">Stock</a></li>
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/box-seam-fill.svg" alt="stock"><a href="#">Stock</a></li>
                 </div><br>
                 <div class="contenedor-usuarios">
-                    <li><img src="http://localhost/h2/yener-main/bootstrap/iconos/person-square.svg" alt="usuarios"><a href="#">Usuarios</a></li>
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/person-square.svg" alt="usuarios"><a href="#">Usuarios</a></li>
                 </div>
             </ul>
         </nav>
@@ -68,16 +67,13 @@ if(empty($_SESSION["id"]) ){
     <div class="auto">
      
     <?php
+// Aquí estaría tu lógica para obtener los datos de la base de datos y almacenarlos en $result
 
-  // vent contenedor
-
+// vent contenedor
 echo "<div class='vent'>
 <a class='vent1'>Venta de productos </a>  
 <a class='vent1'>Entrada de productos  </a>
-
- </div>";
-// comienso los botones de la tabla eliminar y editar
-
+</div>";
 
 // Comienzo de la tabla
 echo "<table class='styled-table'>";
@@ -87,15 +83,10 @@ echo "<thead><tr><th>ID Producto</th>
 <th>Cantidad</th><th>Fecha de Venta</th>
 <th>Precio Total</th>
 <th>Stock Total</th>
-<th>Descripcion</th>
+<th>Descripción</th>
 <th>Acciones</th></tr>
 </thead>";
 echo "<tbody>";
-
-
-
-
-
 
 // Lógica para mostrar los datos de la base de datos
 if ($result->num_rows > 0) {
@@ -125,74 +116,91 @@ if ($result->num_rows > 0) {
     echo "<tr><td colspan='12'>0 resultados</td></tr>";
 }
 
-
 // Cierre de la tabla
 echo "</tbody>";
 echo "</table>";
 ?>
+
+<!-- Scripts JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function eliminarRegistro(id) {
+        if (confirm('¿Estás seguro de que quieres eliminar este registro?')) {
+            $.ajax({
+                type: 'POST',
+                url: 'eliminar_registro.php', // Ruta a tu script PHP para eliminar registros
+                data: { id: id },
+                success: function(response) {
+                    if (response === 'success') {
+                        $('#fila-' + id).remove(); // Eliminar la fila de la tabla
+                    } else {
+                        alert('Error al eliminar el registro');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    alert('Error al eliminar el registro');
+                }
+            });
+        }
+    }
+
+    function abrirModalEdicion(id) {
+        // Aquí puedes implementar la lógica para cargar los datos del producto en el formulario dentro del modal
+        // Por ejemplo, puedes usar AJAX para obtener los datos del producto desde la base de datos y completar los campos del formulario
+        // Luego, muestras el modal de edición
+        $('#modalEditar').css('display', 'block');
+    }
+
+    function cerrarModalEdicion() {
+        $('#modalEditar').css('display', 'none');
+    }
+
+</script>
 
 
 
 
       <!-- Modal para editar -->
       <div id="modalEditar" class="modal">
-        <div class="modal-content">
-            <span class="cerrar" onclick="cerrarModalEdicion()">&times;</span>
-            <h2>Editar Registro</h2>
-            <form id="formularioEdicion" method="post" action="modulos/editar.php">
+        <div class="modales">
+            <form id="formularioEdicion" method="post" action="modulos/editar_registro.php">
+
+        
+            <span class="close" onclick="cerrarModalEdicion()">&times;</span>
+            <h2>Editar Fila</h2>
                 <input type="hidden" id="idProducto" name="idProducto">
                 <label for="nombreProducto">Nombre del Producto:</label>
-                <input type="text" id="nombreProducto" name="nombre_producto"><br><br>
+                <input type="text" id="nombreProducto"class="form-control" id="nombre-producto" name="nombre_producto">
+                        <label for="preciounit">Precio por unidad</label>
+                        <input name="precio_unidad" type="text" class="form-control" id="precio-unit">
+                        <label for="cantidadstock">Stok</label>
+                        <input name="stock" type="text" class="form-control" id="advertencias-producto">
+                        <label for="idbuyer">ID comprador</label>
+                        <input name="id_comprador" type="text" class="form-control" id="id-buyer">
+                        <label for="nombrebuyer">Nombre comprador</label>
+                        <input name="nombre_comprador" type="text" class="form-control" id="nombre-buyer">
+                        <label for="cantidadsale">Cantidad</label>
+                        <input name="cantidad" type="number" class="form-control" id="cantidad-sale">
+                        <label for="dateventa">Fecha de venta</label>
+                        <input name="fecha_venta" type="date" class="form-control" id="fecha-creacion">
+                        <label for="totalprice">Precio total</label>
+                        <input name="precio_total" type="text" class="form-control" id="id-buyer">
+                        <label for="stocktotal">Stock total</label><br> 
+                        <input name="stock_total" type="text"   class="form-control" id="stock-total">
+            
+                <div class="descripcion-movimientos-ingresos">
+                    <label for="fecha">Descripcion o recomendaciones</label>
+                    <textarea name="descripcion-movimiento-ingreso" class="form-control" id="descripcion-ingresos" cols="50" rows="5"></textarea>
+                </div>
+                    
                 <!-- Agrega más campos de edición aquí -->
-                <button type="submit">Guardar</button>
+                <button type="submit">Guardar Cambios</button>
             </form>
         </div>
     </div>
 
-    <script>
-    var idEditando = null;
-
-    function abrirModalEdicion(id) {
-        idEditando = id;
-        var modal = document.getElementById('modalEditar');
-        modal.style.display = "block";
-        // Puedes cargar los datos del producto aquí según su ID
-    }
-
-    function cerrarModalEdicion() {
-        document.getElementById('modalEditar').style.display = "none";
-        idEditando = null;
-    }
-
-    function eliminarRegistro(id) {
-    if (confirm("¿Estás seguro de que deseas eliminar este registro?")) {
-        // Enviar solicitud al servidor para eliminar el registro con el ID especificado
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log("Registro eliminado correctamente.");
-                // Eliminar la fila del DOM
-                var fila = document.getElementById("fila-" + id);
-                fila.parentNode.removeChild(fila);
-            }
-        };
-        xhttp.open("GET", "eliminar_registro.php?id=" + id, true);
-        xhttp.send();
-    }
-}
-
-
-    function guardarEdicion() {
-        // Aquí puedes obtener los valores editados desde el modal y enviarlos al servidor para actualizar la base de datos
-        var id = document.getElementById("idProducto").value;
-        var nuevoNombre = document.getElementById("nombreProducto").value;
-        // Puedes obtener los demás valores editados de manera similar
-        // Luego, envía estos datos al servidor para actualizar el registro
-        // Puedes usar una solicitud AJAX o cualquier otro método que prefieras
-        // Una vez que los datos se han actualizado en la base de datos, cierra el modal de edición
-        cerrarModalEdicion();
-    }
-</script>
+    
 
 
 

@@ -28,7 +28,7 @@ if(!empty($_POST["ingresar"])){
 
             //verificacion de contraseña con el has de la bd para redireccionar al home 
             if(password_verify($contraseña, $hasalmacenado)){
-                header("location: principal.php");
+                header("location: movimientos.php");
             }else{
                 echo '<script>Swal.fire({
                     icon: "error",

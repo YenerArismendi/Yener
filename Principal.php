@@ -49,33 +49,37 @@ if(empty($_SESSION["id"]) ){
                 <div class="contenedor-estadisticas" onclick="windows.location.href='estadistica.php'">
                     <li><img src="bootstrap/iconos/graph-up-arrow.svg" alt="estadisticas"><a href="estadistica.php">Estadisticas</a></li>
                 </div><br>
-                <div class="contenedor-stock">
+                <div class="contenedor-stock"onclick="window.location.href='Stock.php' ">
                     <li><img src="bootstrap/iconos/box-seam-fill.svg" alt="stock"><a href="Stock.php">Stock</a></li>
                 </div><br>
-                <div class="contenedor-usuarios">
-                    <li><img src="bootstrap/iconos/person-square.svg" alt="usuarios"><a href="#">Usuarios</a></li>
+                <div class="contenedor-usuarios"onclick="window.location.href='usuario.php'">
+                    <li><img src="bootstrap/iconos/person-square.svg" alt="usuarios"><a href="usuario.php">Usuarios</a></li>
                 </div>
             </ul>
         </nav>
     </div>
-    <div class="contenedor-extra">
-        <div class="siemprecontigo" >
-            <div class="contenedor-texto-contigo">
-                <img class="siemprecontigoimg" src="IMAGENES/siempre-contigo.jpg" alt="siempre contigo">
-                <h4><strong>Siempre contigo</strong></h4>
-                <p>Recuerda que tienes soporte para cualquier problema presenteado con el aplicatico
-                siempre nos tienes a tu servicio en horario laboral</p>
+    <div class="contenedor-padre-vienvenida">
+    <img class="fondo-vienvenida" src="IMAGENES/fondo-home.jpg" alt="fondo">
+        <h1 class="vienvenido-sistema">Vienvenido a tu sistema de inventario</h1>
+        <div class="contenedor-extra">
+            <div class="siemprecontigo" >
+                <div class="contenedor-texto-contigo">
+                    <img class="siemprecontigoimg" src="IMAGENES/siempre-contigo.jpg" alt="siempre contigo">
+                    <h4><strong>Siempre contigo</strong></h4>
+                    <p>Recuerda que tienes soporte para cualquier problema presenteado con el aplicatico
+                    siempre nos tienes a tu servicio en horario laboral</p>
+                </div>
             </div>
-            
-        </div>
-        <div class="tu-mejor-software">
-            <h4><strong>Tu mejor opción</strong></h4>
-            <p>Siempre pensando en las pymes para su facil accecibilidad, con funciones de control tanto como productos, usuarios, compradores y proveedores </p>
-        </div>
-        <div class="controla-tu-inventario">
-            <h4><strong>Controla de mejor forma tu inventario</strong></h4>
-            <p>Lleva un mejor control de todos tus productos, recuaerda que es tu dinero el que esta en juego!</p>
+            <div class="tu-mejor-software">
+                <h4><strong>Tu mejor opción</strong></h4>
+                <p>Siempre pensando en las pymes para su facil accecibilidad, con funciones de control tanto como productos, usuarios, compradores y proveedores </p>
+            </div>
+            <div class="controla-tu-inventario">
+                <h4><strong>Controla de mejor forma tu inventario</strong></h4>
+                <p>Lleva un mejor control de todos tus productos, recuaerda que es tu dinero el que esta en juego!</p>
+            </div>
         </div>
     </div>
+    
 </body>
 </html>

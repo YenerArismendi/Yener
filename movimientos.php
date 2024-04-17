@@ -38,7 +38,7 @@ if(empty($_SESSION["id"]) ){
     <div class="lista-principal">
         <nav class="nav-general">
             <ul class="nav-list">
-                <div class="contenedor-home"  onclick="window.location.href='Principal.php'">
+                <div class="contenedor-home" onclick="window.location.href='Principal.php'">
                     <li><img src="bootstrap/iconos/house-fill.svg" alt="home"><a href="#">Inicio</a></li>
                 </div><br>
                 <div class="contenedor-movimientos" onclick="window.location.href='movimientos.php'">
@@ -47,14 +47,14 @@ if(empty($_SESSION["id"]) ){
                 <div class="contenedor-registro" onclick="window.location.href='registrousuario.php'">
                     <li><img src="bootstrap/iconos/journal-plus.svg" alt="registro"><a href="#">Registro</a></li>
                 </div><br>
-                <div class="contenedor-estadisticas" onclick="window.location.href='modulos/procesar.php'">
+                <div class="contenedor-estadisticas" onclick="window.location.href='estadistica.php'">
                     <li><img src="bootstrap/iconos/graph-up-arrow.svg" alt="estadisticas"><a href="estadistica.php">Estadisticas</a></li>
                 </div><br>
-                <div class="contenedor-stock">
-                    <li><img src="bootstrap/iconos/box-seam-fill.svg" alt="stock"><a href="#">Stock</a></li>
+                <div class="contenedor-stock" onclick="window.location.href='Stock.php'">
+                    <li><img src="bootstrap/iconos/box-seam-fill.svg" alt="stock"><a href="Stock.php">Stock</a></li>
                 </div><br>
-                <div class="contenedor-usuarios">
-                    <li><img src="bootstrap/iconos/person-square.svg" alt="usuarios"><a href="#">Usuarios</a></li>
+                <div class="contenedor-usuarios" onclick="window.location.href='usuario.php'">
+                    <li><img src="bootstrap/iconos/person-square.svg" alt="usuarios"><a href="usuario.php">Usuarios</a></li>
                 </div>
             </ul>
         </nav>
@@ -144,7 +144,7 @@ if(empty($_SESSION["id"]) ){
                 <div class="idProducto-nonbreProducto">
                     <div class="idproductoCompra">
                         <label for="id-producto-compra">ID producto</label>
-                        <input type="text" name="idProductoCompra" class="form-control" id="idCompraproducto" value="<?php echo $idproductocompra?>">
+                        <input type="text" name="idProductoCompra" class="form-control" id="idCompraproducto">
                     </div>
                     <div class="nombre-producto-compra">
                         <label for="nombre-producto-compra" >Nombre del producto</label>

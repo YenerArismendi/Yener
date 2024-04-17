@@ -45,4 +45,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 ?>
 
-<?php include 'mostrar_datos.php'; ?>

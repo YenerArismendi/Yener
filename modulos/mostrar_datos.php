@@ -25,4 +25,4 @@ $result = $conn->query($sql_select);
 $conn->close();
 ?>
 
-<?php include '../estadistica.php'; ?>
+

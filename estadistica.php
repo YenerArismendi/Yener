@@ -39,23 +39,23 @@ if(empty($_SESSION["id"]) ){
     <div class="lista-principal">
         <nav class="nav-general">
             <ul class="nav-list">
-                <div class="contenedor-home">
-                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/house-fill.svg" alt="home"><a href="#">Inicio</a></li>
+                <div class="contenedor-home" onclick="window.location.href='Principal.php'">
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/house-fill.svg" alt="home"><a href="Principal.php">Inicio</a></li>
                 </div><br>
-                <div class="contenedor-movimientos">
-                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/clipboard-data-fill.svg" alt="movimientos"><a href="../movimientos.php">Movimientos</a></li>
+                <div class="contenedor-movimientos" onclick="window.location.href='movimientos.php'">
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/clipboard-data-fill.svg" alt="movimientos"><a href="http://localhost/proyecto/yener/movimientos.php">Movimientos</a></li>
                 </div><br>    
-                <div class="contenedor-registro">
-                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/journal-plus.svg" alt="registro"><a href="../principal.php">Registro</a></li>
+                <div class="contenedor-registro" onclick="window.location.href='registrousuario.php'">
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/journal-plus.svg" alt="registro.php"><a href="registrousuario.php">Registro</a></li>
                 </div><br>
-                <div class="contenedor-estadisticas">
+                <div class="contenedor-estadisticas" onclick="window.location.href='estadisticas.php'">
                     <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/graph-up-arrow.svg" alt="estadisticas"><a href="procesar.php">Estadisticas</a></li>
                 </div><br>
-                <div class="contenedor-stock">
-                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/box-seam-fill.svg" alt="stock"><a href="#">Stock</a></li>
+                <div class="contenedor-stock" onclick="window.location.href='Stock.php'">
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/box-seam-fill.svg" alt="stock"><a href="Stock.php">Stock</a></li>
                 </div><br>
-                <div class="contenedor-usuarios">
-                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/person-square.svg" alt="usuarios"><a href="#">Usuarios</a></li>
+                <div class="contenedor-usuarios" onclick="window.location.href='usuario.php'">
+                    <li><img src="http://localhost/proyecto/yener/bootstrap/iconos/person-square.svg" alt="usuarios"><a href="usuario.php">Usuarios</a></li>
                 </div>
             </ul>
         </nav>
